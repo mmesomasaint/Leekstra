@@ -26,7 +26,7 @@ export default function Button({
         primary ? 'bg-black/75 text-white' : 'bg-white text-black/75'
       } border border-black/75 shadow-md rounded-md font-medium text-base ${
         reg && 'px-4 py-2'
-      } ${children}`}
+      } ${className}`}
     >
       {children}
     </button>
