@@ -12,8 +12,10 @@ export default function Home() {
       <div className='w-full flex justify-between items-center gap-10 py-5'>
         <Header size='xxl'>Leekstra</Header>
         <div className='flex justify-start items-center gap-5'>
-          <Button onClick={() => router.push("/auth/login")} reg>Log In</Button>
-          <Button onClick={() => router.push("/auth/register")} reg primary>
+          <Button onClick={() => router.push('/auth/login')} reg>
+            Log In
+          </Button>
+          <Button onClick={() => router.push('/auth/register')} reg primary>
             Register
           </Button>
         </div>
