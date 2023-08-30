@@ -1,9 +1,15 @@
 type HeaderProps = {
-  size: "xxl" | "xl" | "l" | "m"
+  size: 'xxl' | 'xl' | 'l' | 'm'
 }
 
-export default function Header({size}: HeaderProps) {
+export default function Header({ size }: HeaderProps) {
   return (
-    <h1 className={`${size === "xxl" && 'font-extrabold text-4xl'} ${size === "xl" && 'font-bold text-3xl'} ${size === "l" && 'font-semibold text-2xl'} ${size === "m" && 'font-medium xl'}`}></h1>
+    <h1
+      className={`${size === 'xxl' && 'font-extrabold text-4xl'} ${
+        size === 'xl' && 'font-bold text-3xl'
+      } ${size === 'l' && 'font-semibold text-2xl'} ${
+        size === 'm' && 'font-medium xl'
+      }`}
+    ></h1>
   )
 }
