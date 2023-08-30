@@ -11,6 +11,8 @@ export default function Header({ size, children }: HeaderProps) {
       } ${size === 'l' && 'font-semibold text-2xl'} ${
         size === 'm' && 'font-medium xl'
       }`}
-    >{children}</h1>
+    >
+      {children}
+    </h1>
   )
 }
