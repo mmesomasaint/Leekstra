@@ -4,6 +4,6 @@ type HeaderProps = {
 
 export default function Header({size}: HeaderProps) {
   return (
-    <h1 className={`${size === "xxl" && 'font-extrabold'} ${size === "xl" && 'font-bold'} ${size === "l" && 'font-semibold'} ${size === "m" && 'font-medium'}`}></h1>
+    <h1 className={`${size === "xxl" && 'font-extrabold text-4xl'} ${size === "xl" && 'font-bold text-3xl'} ${size === "l" && 'font-semibold text-2xl'} ${size === "m" && 'font-medium xl'}`}></h1>
   )
 }
