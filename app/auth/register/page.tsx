@@ -23,6 +23,7 @@ function Page() {
   }
   return (
     <div className='min-h-screen w-full flex justify-stretch items-center gap-0 bg-white'>
+      <>
       <h1 className='mt-44 mb-12 text-4xl font-bold text-black/70 ml-5'>
         Sign up
       </h1>
@@ -56,6 +57,7 @@ function Page() {
         </label>
         <Button type='submit'>Sign up</Button>
       </form>
+      </>
       <div className='grow h-full scale-125 rotate-45 origin-top-left overflow-hidden'>
         <div
           className={`h-full -scale-125 -rotate-45 w-full bg-[url('/imgs/register-art.jpg)] bg-no-repeat bg-cover bg-center`}
