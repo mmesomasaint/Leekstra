@@ -25,7 +25,7 @@ function Page() {
     <div className='min-h-screen w-full flex justify-stretch items-center gap-0 bg-white overflow-hidden'>
       <div className='flex flex-col gap-5'>
       <h1 className='mt-44 mb-12 text-4xl font-bold text-black/70 ml-5'>
-        Sign up
+        Register
       </h1>
       <form
         onSubmit={handleForm}
@@ -55,7 +55,7 @@ function Page() {
             className='border border-zinc-600/50 rounded-xl p-3 focus:outline-blue-500/50'
           />
         </label>
-        <Button type='submit' reg primary>Sign up</Button>
+        <Button type='submit' reg primary>Register</Button>
       </form>
       </div>
       <div className='grow h-full scale-125 rotate-45 origin-top-left overflow-hidden'>
