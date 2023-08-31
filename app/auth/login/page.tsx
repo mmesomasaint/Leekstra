@@ -55,7 +55,7 @@ function Page() {
               className='border border-zinc-600/50 rounded-xl p-3 focus:outline-blue-500/50'
             />
           </label>
-          <Button type='submit'>Log in</Button>
+          <Button type='submit' reg primary>Log in</Button>
         </form>
       </div>
       <div className='grow h-full scale-125 rotate-45 origin-top-left overflow-hidden'>
