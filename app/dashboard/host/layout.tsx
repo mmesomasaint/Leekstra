@@ -17,10 +17,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         <div className='flex justify-start items-center gap-5'></div>
       </div>
       <div className='grow'>
-        <div className='px-10'>
-          <Header size='xl'>Profile</Header>
-          {children}
-        </div>
+        {children}
       </div>
     </div>
   )
