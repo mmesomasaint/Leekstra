@@ -1,5 +1,5 @@
 import Header from '@/components/header'
-import Link from 'next/link'
+import LinkText from '@/components/link-text'
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
@@ -8,10 +8,10 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         <div className='flex gap-10'>
           <Header size='xxl'>Leekstra</Header>
           <div className='flex justify-evenly items-center gap-5'>
-            <Link href='profile'>Profile</Link>
-            <Link href='proposals'>Proposals</Link>
-            <Link href='messages'>Messages</Link>
-            <Link href='invites'>Invites</Link>
+            <LinkText href='profile'>Profile</LinkText>
+            <LinkText href='proposals'>Proposals</LinkText>
+            <LinkText href='messages'>Messages</LinkText>
+            <LinkText href='invites'>Invites</LinkText>
           </div>
         </div>
         <div className='flex justify-start items-center gap-5'></div>

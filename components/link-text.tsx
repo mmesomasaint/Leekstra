@@ -2,7 +2,7 @@ import Link from 'next/link'
 
 type LinkProps = {
   href: string
-  className: string
+  className?: string
   children: React.ReactNode
 }
 
