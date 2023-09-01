@@ -36,8 +36,7 @@ export default function FilterMatches() {
         </div>
       </div>
       <div className='px-10'>
-        <form>
-        </form>
+        <form></form>
       </div>
     </div>
   )
