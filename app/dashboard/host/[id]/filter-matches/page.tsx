@@ -1,3 +1,4 @@
+import Button from '@/components/button'
 import Header from '@/components/header'
 import Image from 'next/image'
 
@@ -80,6 +81,7 @@ export default function FilterMatches() {
               </select>
             </label>
           </form>
+          <Button primary reg>Publish</Button>
         </div>
       </div>
     </div>
