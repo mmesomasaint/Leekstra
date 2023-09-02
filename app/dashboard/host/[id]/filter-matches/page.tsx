@@ -39,7 +39,35 @@ export default function FilterMatches() {
           </div>
         </div>
         <div className='px-10'>
-          <form></form>
+          <form>
+            <label htmlFor='locked-location' className='flex flex-col gap-1 items-end justify-start'>
+              <span>Location Lock</span>
+              <input id='locked-location' type='checkbox' name='checkbox' />
+            </label>
+            <label htmlFor='budget' className='flex flex-col gap-1 items-end justify-start'>
+              <span>Budget</span>
+              <div className='flex justify-start items-center gap-10'>
+                <label htmlFor='from' className='flex gap-2'>
+                  <input id='from' type='number' name='from' />
+                </label>
+                <label htmlFor='to' className='flex gap-2'>
+                  <input id='to' type='number' name='to' />
+                </label>
+              </div>
+            </label>
+            <label htmlFor='pay' className='flex flex-col gap-1 items-end justify-start'>
+              <span>Pay</span>
+              <input id='pay' type='number' name='pay' />
+            </label>
+            <label htmlFor='eventtype' className='flex flex-col gap-1 items-end justify-start'>
+              <span>Event Type</span>
+              <select defaultValue={"Concert"}>
+                <option value='Big'>Big</option>
+                <option value='Mid'>MId</option>
+                <option value='Small'>Small</option>
+              </select>
+            </label>
+          </form>
         </div>
       </div>
     </div>
