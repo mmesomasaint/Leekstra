@@ -14,6 +14,7 @@ export default function Card() {
       <span>Pay: 5000</span>
       <span>Budget: from 50,000 to 100,000</span>
       <span>Location: Nigeria</span>
+      <span>Class: Party</span>
     </div>
   )
 }
