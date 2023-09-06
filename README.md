@@ -1,1 +1,1 @@
-# Leekstra - Event host and Event planner matcher market
+# Leekstra - World Marketplace For Event Hosts & Planners
