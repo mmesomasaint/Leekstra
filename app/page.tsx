@@ -31,9 +31,8 @@ export default function Home() {
                   Event Hosts & Planners
                 </h1>
                 <p className='block w-[90%] sm:w-[80%] md:w-[70%] lg:w-[50%] xl:w-[40%] mx-auto text-lg md:text-2xl lg:text-lg font-normal leading-tight text-white mb-8'>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  Vivamus tempus dui nec euismod congue. Nulla id libero
-                  dignissim, convallis odio
+                  In the world of event hosting and planning, competence holds
+                  value. Leekstra ensures competence goes both ways
                 </p>
                 <div className='flex justify-center gap-8 items-center'>
                   <Button reg>
