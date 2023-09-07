@@ -53,7 +53,7 @@ export default function Home() {
             </div>
           </div>
         </section>
-        {/*End of showcase section*/}
+        {/*End of hero section*/}
         <section>
           <div className='px-10 bg-white'>
             <div className='bg-white'>
@@ -105,7 +105,7 @@ export default function Home() {
             </div>
           </div>
         </section>
-        {/*End of showcase section*/}
+        {/*End of feature section*/}
       </div>
     </main>
   )
