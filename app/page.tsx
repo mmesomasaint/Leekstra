@@ -20,6 +20,9 @@ export default function Home() {
           </Button>
         </div>
       </div>
+      <div className='grow w-full bg-white'>
+        
+      </div>
     </main>
   )
 }
