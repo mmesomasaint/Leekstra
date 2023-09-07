@@ -60,7 +60,8 @@ export default function Home() {
               <div className='w-[90%] sm:[80%] mx-auto'>
                 <div className='flex flex-col justify-center items-center pt-20'>
                   <span className='text-gray-500 text-center text-sm lg:text-xl font-normal sm:font-medium xl:text-2xl'>
-                    To increase trust between host and planner we have setup some key features with you in mind.
+                    To increase trust between host and planner we have setup
+                    some key features with you in mind.
                   </span>
                   <span className='text-black/95 text-center text-base sm:text-lg lg:text-2xl xl:text-3xl font-semibold sm:font-bold'>
                     For every event hosted or planned, these take effect.
