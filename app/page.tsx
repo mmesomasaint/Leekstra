@@ -56,55 +56,54 @@ export default function Home() {
         {/*End of showcase section*/}
         <section>
           <div className='px-10 bg-white'>
-            
-      <div className='bg-white'>
-        <div className='w-[90%] sm:[80%] mx-auto'>
-          <div className='flex flex-col justify-center items-center pt-20'>
-            <span className='text-gray-500 text-center text-sm lg:text-xl font-normal sm:font-medium xl:text-2xl'>
-              Duis in porttitor nisl. Proin eget quam ipsum. Pellentesque
-              malesuada vel ipsum ac malesuada.
-            </span>
-            <span className='text-black/95 text-center text-base sm:text-lg lg:text-2xl xl:text-3xl font-semibold sm:font-bold'>
-              pellentesque iaculis nulla in, sagittis venenatis libero
-            </span>
-          </div>
-          <div className='flex flex-col md:flex-row gap-20 justify-center items-center w-[85%] sm:w-[80%] max-w-[85rem] mx-auto pt-12 pb-20'>
-            <div className='p-2'>
-              <img src='/imgs/buy-gifts.jpg' alt='quality' />
-              <div className='mt-4'>
-                <span className='lg:text-xl xl:text-2xl font-bold text-black/95 text-center block'>
-                  Buy a gift
-                </span>
-                <span className='block lg:text-lg xl:text-xl text-gray-600 font-medium text-center'>
-                  Vivamus pharetra in leo et tempus
-                </span>
+            <div className='bg-white'>
+              <div className='w-[90%] sm:[80%] mx-auto'>
+                <div className='flex flex-col justify-center items-center pt-20'>
+                  <span className='text-gray-500 text-center text-sm lg:text-xl font-normal sm:font-medium xl:text-2xl'>
+                    Duis in porttitor nisl. Proin eget quam ipsum. Pellentesque
+                    malesuada vel ipsum ac malesuada.
+                  </span>
+                  <span className='text-black/95 text-center text-base sm:text-lg lg:text-2xl xl:text-3xl font-semibold sm:font-bold'>
+                    pellentesque iaculis nulla in, sagittis venenatis libero
+                  </span>
+                </div>
+                <div className='flex flex-col md:flex-row gap-20 justify-center items-center w-[85%] sm:w-[80%] max-w-[85rem] mx-auto pt-12 pb-20'>
+                  <div className='p-2'>
+                    <img src='/imgs/buy-gifts.jpg' alt='quality' />
+                    <div className='mt-4'>
+                      <span className='lg:text-xl xl:text-2xl font-bold text-black/95 text-center block'>
+                        Buy a gift
+                      </span>
+                      <span className='block lg:text-lg xl:text-xl text-gray-600 font-medium text-center'>
+                        Vivamus pharetra in leo et tempus
+                      </span>
+                    </div>
+                  </div>
+                  <div className='p-2'>
+                    <img src='/imgs/send-gifts.jpg' alt='quality' />
+                    <div className='mt-4'>
+                      <span className='lg:text-xl xl:text-2xl font-bold text-black/95 text-center block'>
+                        Send a gift
+                      </span>
+                      <span className='block lg:text-lg xl:text-xl text-gray-600 font-medium text-center'>
+                        Duis in porttitor nisl. Proin eget quam ipsum.
+                      </span>
+                    </div>
+                  </div>
+                  <div className='p-2'>
+                    <img src='/imgs/share-gifts.jpg' alt='quality' />
+                    <div className='mt-4'>
+                      <span className='lg:text-xl xl:text-2xl font-bold text-black/95 text-center block'>
+                        Share a gift
+                      </span>
+                      <span className='block lg:text-lg xl:text-xl text-gray-600 font-medium text-center'>
+                        Duis elit ex, pellentesque iaculis nulla in
+                      </span>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
-            <div className='p-2'>
-              <img src='/imgs/send-gifts.jpg' alt='quality' />
-              <div className='mt-4'>
-                <span className='lg:text-xl xl:text-2xl font-bold text-black/95 text-center block'>
-                  Send a gift
-                </span>
-                <span className='block lg:text-lg xl:text-xl text-gray-600 font-medium text-center'>
-                  Duis in porttitor nisl. Proin eget quam ipsum.
-                </span>
-              </div>
-            </div>
-            <div className='p-2'>
-              <img src='/imgs/share-gifts.jpg' alt='quality' />
-              <div className='mt-4'>
-                <span className='lg:text-xl xl:text-2xl font-bold text-black/95 text-center block'>
-                  Share a gift
-                </span>
-                <span className='block lg:text-lg xl:text-xl text-gray-600 font-medium text-center'>
-                  Duis elit ex, pellentesque iaculis nulla in
-                </span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
           </div>
         </section>
         {/*End of showcase section*/}
