@@ -60,11 +60,10 @@ export default function Home() {
               <div className='w-[90%] sm:[80%] mx-auto'>
                 <div className='flex flex-col justify-center items-center pt-20'>
                   <span className='text-gray-500 text-center text-sm lg:text-xl font-normal sm:font-medium xl:text-2xl'>
-                    Duis in porttitor nisl. Proin eget quam ipsum. Pellentesque
-                    malesuada vel ipsum ac malesuada.
+                    To increase trust between host and planner we have setup some key features with you in mind.
                   </span>
                   <span className='text-black/95 text-center text-base sm:text-lg lg:text-2xl xl:text-3xl font-semibold sm:font-bold'>
-                    pellentesque iaculis nulla in, sagittis venenatis libero
+                    For every event hosted or planned, these take effect.
                   </span>
                 </div>
                 <div className='flex flex-col md:flex-row gap-20 justify-center items-center w-[85%] sm:w-[80%] max-w-[85rem] mx-auto pt-12 pb-20'>
@@ -72,10 +71,10 @@ export default function Home() {
                     <img src='/imgs/buy-gifts.jpg' alt='quality' />
                     <div className='mt-4'>
                       <span className='lg:text-xl xl:text-2xl font-bold text-black/95 text-center block'>
-                        Buy a gift
+                        Accept Invite
                       </span>
                       <span className='block lg:text-lg xl:text-xl text-gray-600 font-medium text-center'>
-                        Vivamus pharetra in leo et tempus
+                        Accept jobs you're comfortable with
                       </span>
                     </div>
                   </div>
@@ -83,10 +82,10 @@ export default function Home() {
                     <img src='/imgs/send-gifts.jpg' alt='quality' />
                     <div className='mt-4'>
                       <span className='lg:text-xl xl:text-2xl font-bold text-black/95 text-center block'>
-                        Send a gift
+                        We Are Escrow
                       </span>
                       <span className='block lg:text-lg xl:text-xl text-gray-600 font-medium text-center'>
-                        Duis in porttitor nisl. Proin eget quam ipsum.
+                        Before you begin any job, the host pays.
                       </span>
                     </div>
                   </div>
@@ -94,10 +93,10 @@ export default function Home() {
                     <img src='/imgs/share-gifts.jpg' alt='quality' />
                     <div className='mt-4'>
                       <span className='lg:text-xl xl:text-2xl font-bold text-black/95 text-center block'>
-                        Share a gift
+                        Only Deserving
                       </span>
                       <span className='block lg:text-lg xl:text-xl text-gray-600 font-medium text-center'>
-                        Duis elit ex, pellentesque iaculis nulla in
+                        We release your money only when job weldone.
                       </span>
                     </div>
                   </div>
