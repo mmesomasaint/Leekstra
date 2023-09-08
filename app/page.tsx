@@ -123,8 +123,9 @@ export default function Home() {
                 Created By:
               </span>
               <span className='text-black text-xl font-medium flex gap-5'>
-                Mmesoma Saint <BsLinkedin className='text-xl text-black/90' />{' '}
-                <BsTwitter className='text-xl text-black/90' />
+                <span>Mmesoma Saint</span>
+                <BsLinkedin className='text-xl text-black/90' onClick={() => router.push('/my-linkedin')} />
+                <BsTwitter className='text-xl text-black/90' onClick={() => router.push('/my-twitter')} />
               </span>
             </div>
           </div>
