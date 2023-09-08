@@ -16,7 +16,7 @@ export default function FilterMatches() {
               alt='avatar'
               className='shadow-md'
             />
-            <span>Name: daniel O'brien</span>
+            <span>Name: daniel O&apos;brien</span>
           </div>
           <div className='flex justify-start items-center gap-10 shadow-md rounded-2xl border border-gray-500/50 p-10'>
             <Image
@@ -26,7 +26,7 @@ export default function FilterMatches() {
               alt='avatar'
               className='shadow-md'
             />
-            <span>Name: daniel O'brien</span>
+            <span>Name: daniel O&apos;brien</span>
           </div>
           <div className='flex justify-start items-center gap-10 shadow-md rounded-2xl border border-gray-500/50 p-10'>
             <Image
@@ -36,7 +36,7 @@ export default function FilterMatches() {
               alt='avatar'
               className='shadow-md'
             />
-            <span>Name: daniel O'brien</span>
+            <span>Name: daniel O&apos;brien</span>
           </div>
         </div>
         <div className='px-10'>
