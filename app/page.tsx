@@ -1,6 +1,7 @@
 'use client'
 
 import { MdOutlineArrowForwardIos } from 'react-icons/md'
+import {BsTwitter, BsLinkedin} from 'react-icons/bs'
 import { useRouter } from 'next/navigation'
 import Button from '@/components/button'
 import Header from '@/components/header'
@@ -107,6 +108,16 @@ export default function Home() {
           </div>
         </section>
         {/*End of feature section*/}
+        <section>
+          <div className='bg-black/60 p-20'>
+            <div className='text-gray-300 text-center text-sm lg:text-xl font-normal sm:font-medium xl:text-2xl w-[70%] mx-auto'>This projected was inspired by the difficulty I've experienced while trying to setup a party or throw a party. Because I know no one, no contractors to call, because I'm not an event planner. Coupled with the fact that I don't live in the city so, how do I find them?</div>
+            <div className='flex justify-center items-center gap-5 mt-5'>
+              <span className='text-black/75 text-xl font-medium'>Created By:</span>
+              <span className='text-black text-xl font-medium flex gap-5'>Mmesoma Saint <BsLinkedin className='text-xl text-black/90' /> <BsTwitter className='text-xl text-black/90' /></span>
+            </div>
+          </div>
+        </section>
+        {/*End of about section*/}
       </div>
     </main>
   )
