@@ -10,7 +10,7 @@ export default function Card() {
         alt='avatar'
         className='shadow-md'
       />
-      <span>Name: daniel O'brien</span>
+      <span>Name: daniel O&apos;rien</span>
       <span>Pay: 5000</span>
       <span>Budget: from 50,000 to 100,000</span>
       <span>Location: Nigeria</span>

@@ -5,6 +5,7 @@ import { BsTwitter, BsLinkedin } from 'react-icons/bs'
 import { useRouter } from 'next/navigation'
 import Button from '@/components/button'
 import Header from '@/components/header'
+import Image from 'next/image'
 
 export default function Home() {
   const router = useRouter()
@@ -28,7 +29,7 @@ export default function Home() {
             <div className='flex justify-center items-center h-full w-full bg-black/60'>
               <div className='w-full h-fit text-center pt-40 md:pt-10 py-16 md:py-0'>
                 <h1 className='block w-[90%] sm:w-[60%] lg:w-[50%] xl:w-[45%] mx-auto text-4xl md:text-6xl font-bold leading-tight text-white mb-4'>
-                  World's <span className='text-gray-400'>#1 Market</span>, For
+                  World&apos;s <span className='text-gray-400'>#1 Market</span>, For
                   Event Hosts & Planners
                 </h1>
                 <p className='block w-[90%] sm:w-[80%] md:w-[70%] lg:w-[50%] xl:w-[40%] mx-auto text-lg md:text-2xl lg:text-lg font-normal leading-tight text-white mb-8'>
@@ -70,18 +71,18 @@ export default function Home() {
                 </div>
                 <div className='flex flex-col md:flex-row gap-20 justify-center items-center w-[85%] sm:w-[80%] max-w-[85rem] mx-auto pt-12 pb-20'>
                   <div className='p-2'>
-                    <img src='/imgs/buy-gifts.jpg' alt='quality' />
+                    <Image width={200} height={200} src='/imgs/buy-gifts.jpg' alt='quality' />
                     <div className='mt-4'>
                       <span className='lg:text-xl xl:text-2xl font-bold text-black/95 text-center block'>
                         Accept Invite
                       </span>
                       <span className='block lg:text-lg xl:text-xl text-gray-600 font-medium text-center'>
-                        Accept jobs you're comfortable with
+                        Accept jobs you&apos;re comfortable with
                       </span>
                     </div>
                   </div>
                   <div className='p-2'>
-                    <img src='/imgs/send-gifts.jpg' alt='quality' />
+                    <Image width={200} height={200} src='/imgs/send-gifts.jpg' alt='quality' />
                     <div className='mt-4'>
                       <span className='lg:text-xl xl:text-2xl font-bold text-black/95 text-center block'>
                         We Are Escrow
@@ -92,7 +93,7 @@ export default function Home() {
                     </div>
                   </div>
                   <div className='p-2'>
-                    <img src='/imgs/share-gifts.jpg' alt='quality' />
+                    <Image width={200} height={200} src='/imgs/share-gifts.jpg' alt='quality' />
                     <div className='mt-4'>
                       <span className='lg:text-xl xl:text-2xl font-bold text-black/95 text-center block'>
                         Only Deserving
@@ -111,10 +112,10 @@ export default function Home() {
         <section>
           <div className='bg-black/60 p-20'>
             <div className='text-gray-300 text-center text-sm lg:text-xl font-normal sm:font-medium xl:text-2xl w-[70%] mx-auto'>
-              This projected was inspired by the difficulty I've experienced
+              This projected was inspired by the difficulty I&apos;ve experienced
               while trying to setup a party or throw a party. Because I know no
-              one, no contractors to call, because I'm not an event planner.
-              Coupled with the fact that I don't live in the city so, how do I
+              one, no contractors to call, because I&apos;m not an event planner.
+              Coupled with the fact that I don&apos;t live in the city so, how do I
               find them?
             </div>
             <div className='flex justify-center items-center gap-5 mt-5'>
