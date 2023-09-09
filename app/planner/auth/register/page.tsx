@@ -2,7 +2,7 @@
 import { useState, FormEvent } from 'react'
 import { useRouter } from 'next/navigation'
 import Button from '@/components/button'
-import register from '@/lib/auth/register'
+import register from '@/lib/auth/planner/register'
 
 function Page() {
   const [email, setEmail] = useState('')
@@ -12,7 +12,7 @@ function Page() {
   const handleForm = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault()
 
-    const { error } = await register(email, password, "planner")
+    const { error } = await register(email, password)
 
     if (error) {
       return
