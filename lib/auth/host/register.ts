@@ -10,13 +10,13 @@ const auth = getAuth(firebase_app)
 const db = getFirestore(firebase_app)
 const usersRef = collection(db, "users")
 
-export default async function register(email: string, password: string, type: string) {
+export default async function register(email: string, password: string) {
   let user = null,
     error = null
 
   try {
     const result = await createUserWithEmailAndPassword(auth, email, password)
-    user = await setDoc(doc(usersRef, result.user.uid), {...result.user, type})
+    user = await setDoc(doc(usersRef, result.user.uid), {...result.user})
   } catch (e) {
     error = e as AuthError
   }
