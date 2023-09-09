@@ -12,7 +12,7 @@ function Page() {
   const handleForm = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault()
 
-    const { error } = await register(email, password)
+    const { error } = await register(email, password, "planner")
 
     if (error) {
       return
