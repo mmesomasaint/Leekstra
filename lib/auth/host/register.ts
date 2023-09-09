@@ -1,4 +1,4 @@
-import firebase_app from '../firebase'
+import firebase_app from '@/lib/firebase'
 import {
   createUserWithEmailAndPassword,
   getAuth,
