@@ -9,7 +9,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           <Header size='xxl'>Leekstra</Header>
           <div className='flex justify-evenly items-center gap-5'>
             <LinkText href='profile'>Profile</LinkText>
-            <LinkText href='proposals'>Find Match</LinkText>
+            <LinkText href='find-match'>Find Match</LinkText>
             <LinkText href='messages'>Messages</LinkText>
             <LinkText href='invites'>Jobs</LinkText>
           </div>
