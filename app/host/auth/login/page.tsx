@@ -2,7 +2,7 @@
 import { useState, FormEvent } from 'react'
 import { useRouter } from 'next/navigation'
 import Button from '@/components/button'
-import logIn from '@/lib/auth/login'
+import logIn from '@/lib/auth/host/login'
 
 function Page() {
   const [email, setEmail] = useState('')

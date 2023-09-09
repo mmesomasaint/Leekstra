@@ -5,7 +5,7 @@ import { doc, getFirestore, getDoc } from 'firebase/firestore'
 const auth = getAuth(firebase_app)
 const db = getFirestore(firebase_app)
 
-export default async function login(email: string, password: string) {
+export default async function logIn(email: string, password: string) {
   let user = null,
     error = null
 
