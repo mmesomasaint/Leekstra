@@ -16,9 +16,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         </div>
         <div className='flex justify-start items-center gap-5'></div>
       </div>
-      <div className='grow'>
-        {children}
-      </div>
+      <div className='grow'>{children}</div>
     </div>
   )
 }
