@@ -22,7 +22,7 @@ export default async function register(email: string, password: string) {
       displayName: result.user.displayName,
       phoneNumber: result.user.phoneNumber,
       photoURL: result.user.photoURL,
-      emailVerified: result.user.emailVerified
+      emailVerified: result.user.emailVerified,
     }
 
     // Create user in planners db, and the local variable
