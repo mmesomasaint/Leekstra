@@ -15,7 +15,7 @@ export default async function logIn(email: string, password: string) {
     const docSnap = await getDoc(hostsRef)
 
     if (docSnap.exists()) user = docSnap.data()
-    else throw new Error() as AuthError
+    else throw new Error("Email doesn't exist.")
   } catch (e) {
     error = e as AuthError
   }

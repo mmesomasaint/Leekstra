@@ -16,7 +16,17 @@ export default async function register(email: string, password: string) {
 
   try {
     const result = await createUserWithEmailAndPassword(auth, email, password)
-    user = await setDoc(doc(hostsRef, result.user.uid), { ...result.user })
+    const data = {
+      uid: result.user.uid,
+      email: result.user.email,
+      displayName: result.user.displayName,
+      phoneNumber: result.user.phoneNumber,
+      photoURL: result.user.photoURL,
+      emailVerified: result.user.emailVerified,
+    }
+
+    // Create user in planners db, and the local variable
+    user = await setDoc(doc(hostsRef, result.user.uid), data)
   } catch (e) {
     error = e as AuthError
   }
