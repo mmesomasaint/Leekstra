@@ -14,6 +14,6 @@ export default async function getHost() {
 
     if (docSnap.exists()) return docSnap.data()
   }
-  
+
   return null
 }
