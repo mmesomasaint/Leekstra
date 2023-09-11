@@ -19,7 +19,7 @@ export default async function logIn(email: string, password: string) {
   } catch (e) {
     error = e as AuthError
 
-    // IF a user is signed in, sign them out.
+    // If a user is signed in, sign them out.
     if (auth.currentUser) await auth.signOut()
   }
 
