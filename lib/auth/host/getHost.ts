@@ -5,11 +5,9 @@ import { doc, getFirestore, getDoc } from 'firebase/firestore'
 const auth = getAuth(firebase_app)
 const db = getFirestore(firebase_app)
 
-export default async function getHost() {
-  const user = auth.currentUser
-
-  if (user !== null) {
-    const hostsRef = doc(db, 'hosts', user.uid)
+export default async function getHost(id=auth.currentUser?.uid) {
+  if (id) {
+    const hostsRef = doc(db, 'hosts', id)
     const docSnap = await getDoc(hostsRef)
 
     if (docSnap.exists()) return docSnap.data()
