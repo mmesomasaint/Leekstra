@@ -17,7 +17,7 @@ export default async function logIn(email: string, password: string) {
     if (docSnap.exists()) user = docSnap.data()
     else {
       // Throw an error.
-      // If user isn't signin as host but sign in, 
+      // If user isn't signin as host but sign in,
       // sign the user out.
       if (auth.currentUser) await auth.signOut()
       throw new Error("Email doesn't exist.")
