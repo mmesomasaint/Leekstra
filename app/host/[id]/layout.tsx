@@ -1,9 +1,16 @@
 import Header from '@/components/header'
 import LinkText from '@/components/link-text'
+import getHost from '@/lib/auth/host/getHost'
 
-export default function Layout({ children }: { children: React.ReactNode }) {
+export default async function Layout({ children }: { children: React.ReactNode }) {
+  const user = await getHost()
+
   return (
-    <div className='h-full flex flex-col justify-start items-stretch gap-5'>
+    <>
+    
+    {user ? (
+      
+      <div className='h-full flex flex-col justify-start items-stretch gap-5'>
       <div className='w-full flex justify-between items-center gap-10 py-5'>
         <div className='flex gap-10'>
           <Header size='xxl'>Leekstra</Header>
@@ -18,5 +25,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       </div>
       <div className='grow'>{children}</div>
     </div>
+      ) : "Sign in first"}
+      </>
   )
 }
