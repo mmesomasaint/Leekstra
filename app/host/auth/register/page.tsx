@@ -20,9 +20,9 @@ function Page() {
     }
 
     // else successful
-    return router.push(`/host/${user?.uid}`)
+    if (user) return router.push(`/host/${user.uid}`)
   }
-  
+
   return (
     <div className='min-h-screen w-full flex justify-stretch items-center gap-0 bg-white overflow-hidden'>
       <div className='flex flex-col gap-5'>
