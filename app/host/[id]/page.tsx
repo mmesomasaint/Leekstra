@@ -35,6 +35,9 @@ export default function Profile({
             Name: Emeka D Stalleon
           </span>
           <span className='text-lg font-semibold text-black/75'>
+            Email: emeka@gmail.com
+          </span>
+          <span className='text-lg font-semibold text-black/75'>
             Location: Enugu, Nigeria
           </span>
         </div>
