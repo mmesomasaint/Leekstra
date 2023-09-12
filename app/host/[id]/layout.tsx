@@ -1,16 +1,11 @@
 import Header from '@/components/header'
 import LinkText from '@/components/link-text'
-import getHost from '@/lib/auth/host/getHost'
 
 export default async function Layout({
-  authModal,
   children,
 }: {
-  authModal: React.ReactNode
   children: React.ReactNode
 }) {
-  const user = await getHost()
-
   return (
     <div className='h-full flex flex-col justify-start items-stretch gap-5'>
       <div className='w-full flex justify-between items-center gap-10 py-5'>
@@ -25,7 +20,7 @@ export default async function Layout({
         </div>
         <div className='flex justify-start items-center gap-5'></div>
       </div>
-      <div className='grow'>{user ? children : authModal}</div>
+      <div className='grow'>{children}</div>
     </div>
   )
 }
