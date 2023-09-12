@@ -3,9 +3,19 @@ import getHost from '@/lib/auth/host/getHost'
 import Button from '@/components/button'
 import Header from '@/components/header'
 import Image from 'next/image'
+import { redirect } from 'next/navigation'
 
-export const getServerSideProps: GetServerSideProps = async () => {
+export const getServerSideProps: GetServerSideProps = async ({params}) => {
+  // Get the currenct user
   const host = await getHost()
+
+  // Check if the current signed in user is the same with url.
+  // If not redirect to a view only section of the profile.
+  if (host?.uid !== params?.query) {
+    redirect(`/profile/${params?.query}`)
+    return
+  }
+  
   return { props: { host } }
 }
 
