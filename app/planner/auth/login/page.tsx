@@ -13,14 +13,14 @@ function Page() {
   const handleForm = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault()
 
-    const { error } = await logIn(email, password)
+    const { user, error } = await logIn(email, password)
 
     if (error) {
       return
     }
 
     // else successful
-    return router.push('/dashboard')
+    if (user) return router.push(`/host/${user.uid}`)
   }
   return (
     <div className='min-h-screen w-full flex justify-stretch items-center gap-0 bg-white'>
