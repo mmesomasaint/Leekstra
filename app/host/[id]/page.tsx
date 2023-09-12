@@ -5,7 +5,7 @@ import Header from '@/components/header'
 import Image from 'next/image'
 import { redirect } from 'next/navigation'
 
-export const getServerSideProps: GetServerSideProps = async ({params}) => {
+export const getServerSideProps: GetServerSideProps = async ({ params }) => {
   // Get the currenct user
   const host = await getHost()
 
