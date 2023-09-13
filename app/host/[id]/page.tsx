@@ -25,7 +25,7 @@ export default function Profile({
     <div className='px-10'>
       <Header size='xl'>Profile</Header>
       <div className='grid grid-cols-3 place-items-stretch gap-10 p-10'>
-        <div className='p-5'>
+        <div className='p-5 flex flex-col gap-5'>
           <Button primary reg>
             Edit Profile
           </Button>
