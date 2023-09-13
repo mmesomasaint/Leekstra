@@ -1,7 +1,7 @@
 import { redirect } from "next/navigation"
 import getPlanner from "./getPlanner"
 
-export default async function planner(uid: string) {
+export default async function validateURL(uid: string) {
   // Get the currenct user
   const planner = await getPlanner()
 
