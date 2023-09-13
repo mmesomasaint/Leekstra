@@ -18,10 +18,9 @@ export default async function logIn(email: string, password: string) {
     else throw new Error("Email does not exist")
   } catch (e) {
     error = e as AuthError
-    
+
     // If a user was signed in, sign them out.
     if (auth.currentUser) await auth.signOut()
-    throw new Error("Email doesn't exist.")
   }
 
   return { user, error }
