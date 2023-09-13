@@ -1,9 +1,9 @@
-import validateURL from '@/lib/auth/planner/validateURL'
+import validateID from '@/lib/auth/planner/validateID'
 import Header from '@/components/header'
 import Image from 'next/image'
 
 export default async function Profile({ params }: { params: { uid: string } }) {
-  const planner = await validateURL(params.uid)
+  const planner = await validateID(params.uid)
   console.log("I am the planner here: ", planner)
 
   return (
