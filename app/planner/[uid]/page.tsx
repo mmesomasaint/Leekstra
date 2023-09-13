@@ -4,8 +4,7 @@ import Image from 'next/image'
 
 export default async function Profile({ params }: { params: { uid: string } }) {
   const planner = await validateID(params.uid)
-  console.log("I am the planner here: ", planner)
-
+  
   return (
     <div className='px-10'>
       <Header size='xl'>Profile</Header>
