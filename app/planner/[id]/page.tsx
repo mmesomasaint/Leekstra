@@ -1,10 +1,25 @@
-// Get static props.
-// Get server side props.
-
+import type { InferGetServerSidePropsType, GetServerSideProps } from 'next'
+import getPlanner from '@/lib/auth/planner/getPlanner'
+import { redirect } from 'next/navigation'
 import Header from '@/components/header'
 import Image from 'next/image'
 
-export default function Profile() {
+export const getServerSideProps: GetServerSideProps = async ({ params }) => {
+  // Get the currenct user
+  const planner = await getPlanner()
+
+  // Check if the current signed in user is the same with url.
+  // If not redirect to a view only section of the profile.
+  // If not authenticated, ask planner to login
+  if (!planner) redirect('/planner/auth/login')
+  else if (planner?.uid !== params?.query) redirect(`/profile/${params?.query}`)
+
+  return { props: { planner } }
+}
+
+export default function Profile({
+  planner,
+}: InferGetServerSidePropsType<typeof getServerSideProps>) {
   return (
     <div className='px-10'>
       <Header size='xl'>Profile</Header>
