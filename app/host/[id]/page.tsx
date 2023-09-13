@@ -11,7 +11,9 @@ export const getServerSideProps: GetServerSideProps = async ({ params }) => {
 
   // Check if the current signed in user is the same with url.
   // If not redirect to a view only section of the profile.
-  if (host?.uid !== params?.query) redirect(`/profile/${params?.query}`)
+  // If not authenticated, ask host to login
+  if (!host) redirect('/host/auth/login')
+  else if (host?.uid !== params?.query) redirect(`/profile/${params?.query}`)
 
   return { props: { host } }
 }
