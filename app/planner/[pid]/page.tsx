@@ -1,7 +1,7 @@
 'use client'
 
 import { useEffect } from 'react'
-import { redirect } from 'next/navigation'
+import { useRouter } from 'next/navigation'
 import { useAuthContext } from '../auth/auth-context'
 import Header from '@/components/header'
 import Image from 'next/image'
@@ -9,18 +9,18 @@ import getPlanner from '@/lib/auth/planner/getPlanner'
 
 export default function Profile({ params }: { params: { pid: string } }) {
   const { user } = useAuthContext()
+  const router = useRouter()
 
   useEffect(() => {
     const validateURL = async (urlid: string, uid?: string) => {
       // Get the currenct user
       const planner = await getPlanner(uid)
-      console.log('IN the validate fn: ', planner)
 
       // Check if the current signed in user is the same with url.
       // If not redirect to a view only section of the profile.
       // If not authenticated, ask planner to login
-      if (!planner) redirect('/planner/auth/login')
-      else if (planner?.urlid !== urlid) redirect(`/profile/${urlid}`)
+      if (!planner) router.replace('/planner/auth/login')
+      else if (planner?.urlid !== urlid) router.replace(`/profile/${urlid}`)
 
       return planner
     }
