@@ -20,7 +20,7 @@ function Page() {
     }
 
     // else successful
-    if (user) return router.push(`/host/${user.uid}`)
+    if (user) return router.push(`/planner/${user.uid}`)
   }
   return (
     <div className='min-h-screen w-full flex justify-stretch items-center gap-0 bg-white'>

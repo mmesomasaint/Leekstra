@@ -18,9 +18,7 @@ export const getServerSideProps: GetServerSideProps = async ({ params }) => {
   return { props: { host } }
 }
 
-export default function Profile({
-  host,
-}: InferGetServerSidePropsType<typeof getServerSideProps>) {
+export default function Profile({params}: {params: {uid: string}}) {
   return (
     <div className='px-10'>
       <Header size='xl'>Profile</Header>
