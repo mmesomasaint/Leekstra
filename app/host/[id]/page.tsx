@@ -1,6 +1,6 @@
 'use client'
 
-import {useEffect} from 'react'
+import { useEffect } from 'react'
 import { redirect } from 'next/navigation'
 import Image from 'next/image'
 import getHost from '@/lib/auth/host/getHost'
@@ -8,20 +8,20 @@ import Button from '@/components/button'
 import Header from '@/components/header'
 import { useAuthContext } from '../auth/auth-context'
 
-export default function Profile({params}: {params: {hid: string}}) {
-  const {user} = useAuthContext()
+export default function Profile({ params }: { params: { hid: string } }) {
+  const { user } = useAuthContext()
 
   useEffect(() => {
-    async function validateURL(urlid: string, uid?: string, ) {
+    const validateURL = async (urlid: string, uid?: string) => {
       // Get the currenct user
       const host = await getHost(uid)
-      
+
       // Check if the current signed in user is the same with url.
       // If not redirect to a view only section of the profile.
       // If not authenticated, ask host to login
       if (!host) redirect('/host/auth/login')
       else if (host?.urlid !== urlid) redirect(`/profile/${urlid}`)
-    
+
       return host
     }
 
@@ -36,7 +36,12 @@ export default function Profile({params}: {params: {hid: string}}) {
           <Button primary reg>
             Edit Profile
           </Button>
-          <Image src='/imgs/female-avatar.jpg' width={200} height={200} alt='avatar' />
+          <Image
+            src='/imgs/female-avatar.jpg'
+            width={200}
+            height={200}
+            alt='avatar'
+          />
           <span className='text-lg font-semibold text-black/75'>
             Name: Emeka D Stalleon
           </span>
