@@ -8,12 +8,10 @@ const db = getFirestore(firebase_app)
 export default async function getPlanner() {
   const user = auth.currentUser
 
-  if (user !== null) {
-    const plannersRef = doc(db, 'planners', user.uid)
-    const docSnap = await getDoc(plannersRef)
+  if (user === null) return null
+  
+  const plannersRef = doc(db, 'planners', user.uid)
+  const docSnap = await getDoc(plannersRef)
 
-    if (docSnap.exists()) return docSnap.data()
-  }
-
-  return null
+  if (docSnap.exists()) return docSnap.data()
 }
