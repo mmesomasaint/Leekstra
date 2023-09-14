@@ -5,13 +5,13 @@ import { doc, getFirestore, getDoc } from 'firebase/firestore'
 const auth = getAuth(firebase_app)
 const db = getFirestore(firebase_app)
 
-export default async function getPlanner() {
-  const user = auth.currentUser
-
-  if (user === null) return null
+export default async function getPlanner(uid=auth.currentUser?.uid) {
+  if (uid) {
+    const plannersRef = doc(db, 'planners', uid)
+    const docSnap = await getDoc(plannersRef)
   
-  const plannersRef = doc(db, 'planners', user.uid)
-  const docSnap = await getDoc(plannersRef)
+    if (docSnap.exists()) return docSnap.data()
+  }
 
-  if (docSnap.exists()) return docSnap.data()
+  return null
 }
