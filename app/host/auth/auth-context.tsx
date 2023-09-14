@@ -1,6 +1,6 @@
 'use client'
 
-import { createContext, useContext, useState, useEffect } from 'react'
+import { createContext, useContext, useState, useEffect, useMemo } from 'react'
 import { onAuthStateChanged, getAuth, User } from 'firebase/auth'
 import firebase_app from '@/lib/firebase'
 import Loading from '@/components/loading'
@@ -20,7 +20,7 @@ export const AuthContextProvider = ({
 }: {
   children: React.ReactNode
 }) => {
-  const [user, setUser] = useMemo<User | null>(null)
+  const [user, setUser] = useState<User | null>(null)
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
@@ -37,7 +37,7 @@ export const AuthContextProvider = ({
   }, [])
 
   return (
-    <AuthContext.Provider value={{ user }}>
+    <AuthContext.Provider value={{ user: useMemo(() => user, [user])  }}>
       {loading ? <Loading /> : children}
     </AuthContext.Provider>
   )
