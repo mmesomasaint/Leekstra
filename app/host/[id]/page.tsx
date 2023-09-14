@@ -22,8 +22,6 @@ export default function Profile({ params }: { params: { hid: string } }) {
       // If not authenticated, ask host to login
       if (!host) router.replace('/host/auth/login')
       else if (host?.urlid !== urlid) router.replace(`/profile/${urlid}`)
-
-      return host
     }
 
     validateURL(params.hid, user?.uid)

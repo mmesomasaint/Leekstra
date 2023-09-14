@@ -21,8 +21,6 @@ export default function Profile({ params }: { params: { pid: string } }) {
       // If not authenticated, ask planner to login
       if (!planner) router.replace('/planner/auth/login')
       else if (planner?.urlid !== urlid) router.replace(`/profile/${urlid}`)
-
-      return planner
     }
 
     validateURL(params.pid, user?.uid)
