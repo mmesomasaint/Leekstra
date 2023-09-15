@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, FormEvent } from 'react'
 import Image from 'next/image'
 import type { Job } from '@/lib/job/types'
 import Button from '@/components/button'
@@ -26,7 +26,9 @@ export default function FindMatch() {
     setFilterData((pre) => ({ ...pre, ['type']: 'PUBLIC' }))
   }
 
-  const handleFilter = async () => {
+  const handleFilter = async (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+    
     const result = await filterFetch(filterData)
     setMatch(result)
   }
