@@ -1,4 +1,4 @@
-"use client"
+'use client'
 
 import { useState } from 'react'
 import Image from 'next/image'
@@ -133,10 +133,15 @@ export default function FindMatch() {
                 <option value='Small'>Small</option>
               </select>
             </label>
+            <div className='flex justify-start items-center gap-20'>
+              <Button onClick={() => handlePublish()} primary reg>
+                Search
+              </Button>
+              <Button onClick={() => handlePublish()} reg>
+                Publish
+              </Button>
+            </div>
           </form>
-          <Button onClick={() => handlePublish()} primary reg>
-            Publish
-          </Button>
         </div>
       </div>
     </div>
