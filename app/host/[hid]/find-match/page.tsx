@@ -33,7 +33,7 @@ export default function FindMatch() {
 
   return (
     <div className='px-10'>
-      <Header size='xl'>Best Match</Header>
+      <Header size='l'>Best Match</Header>
       <div className='grid grid-cols-3 gap-10'>
         <div className='col-span-2 flex flex-col justify-start items-stretch gap-8 px-10'>
           <div className='flex justify-start items-center gap-10 shadow-md rounded-2xl bg-gray-400/10 p-10'>
@@ -68,8 +68,9 @@ export default function FindMatch() {
           </div>
         </div>
         <div className='px-10'>
+          <Header size='l'>Filter</Header>
           <form
-            className='flex flex-col justify-start items-start gap-5 ml-5'
+            className='flex flex-col justify-start items-start gap-5  ml-5'
             onSubmit={handleFilter}
           >
             <label
