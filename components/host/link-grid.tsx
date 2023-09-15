@@ -1,3 +1,5 @@
+'use client'
+
 import { useAuthContext } from "@/app/host/auth/auth-context"
 import Header from "../header"
 import LinkText from "../link-text"
