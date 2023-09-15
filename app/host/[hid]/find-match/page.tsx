@@ -88,8 +88,8 @@ export default function FindMatch() {
               htmlFor='budget'
               className='flex flex-col gap-1 items-start justify-start'
             >
-              <span>Budget</span>
-              <div className='flex justify-start items-center gap-10'>
+              <span>Budget:</span>
+              <div className='flex flex-col justify-start items-center gap-10 ml-5'>
                 <label htmlFor='from' className='flex gap-2'>
                   <p className='text-base'>From</p>
                   <input
@@ -127,7 +127,10 @@ export default function FindMatch() {
               className='flex flex-col gap-1 items-start justify-start'
             >
               <p>Event Class</p>
-              <select defaultValue={'Concert'}>
+              <select
+                defaultValue={'Concert'}
+                className='border border-zinc-600/50 rounded-xl p-3 focus:outline-blue-500/50'
+              >
                 <option value='Big'>Big</option>
                 <option value='Mid'>Mid</option>
                 <option value='Small'>Small</option>
