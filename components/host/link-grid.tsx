@@ -1,11 +1,11 @@
 'use client'
 
-import { useAuthContext } from "@/app/host/auth/auth-context"
-import Header from "../header"
-import LinkText from "../link-text"
+import { useAuthContext } from '@/app/host/auth/auth-context'
+import Header from '../header'
+import LinkText from '../link-text'
 
 export default function LinkGrid() {
-  const {host} = useAuthContext()
+  const { host } = useAuthContext()
 
   return (
     <div className='w-full flex justify-between items-center gap-10 py-5'>
