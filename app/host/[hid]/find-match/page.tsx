@@ -134,7 +134,7 @@ export default function FindMatch() {
               </select>
             </label>
             <div className='flex justify-start items-center gap-20'>
-              <Button onClick={() => handlePublish()} primary reg>
+              <Button type='submit' primary reg>
                 Search
               </Button>
               <Button onClick={() => handlePublish()} reg>
