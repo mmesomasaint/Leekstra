@@ -37,7 +37,7 @@ export const AuthContextProvider = ({
   }, [])
 
   return (
-    <AuthContext.Provider value={{ user }}>
+    <AuthContext.Provider value={{ user: useMemo(() => user, [user]) }}>
       {loading ? <Loading /> : children}
     </AuthContext.Provider>
   )

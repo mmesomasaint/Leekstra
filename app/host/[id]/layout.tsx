@@ -1,5 +1,6 @@
 import Header from '@/components/header'
 import LinkText from '@/components/link-text'
+import { AuthContextProvider } from '../auth/auth-context'
 
 export default async function Layout({
   children,
@@ -8,6 +9,7 @@ export default async function Layout({
 }) {
 
   return (
+    <AuthContextProvider>
     <div className='h-full flex flex-col justify-start items-stretch gap-5'>
       <div className='w-full flex justify-between items-center gap-10 py-5'>
         <div className='flex gap-10'>
@@ -23,5 +25,6 @@ export default async function Layout({
       </div>
       <div className='grow'>{children}</div>
     </div>
+    </AuthContextProvider>
   )
 }
