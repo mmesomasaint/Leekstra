@@ -3,8 +3,11 @@ import Image from 'next/image'
 import type { Job } from '@/lib/job/types'
 import Button from '@/components/button'
 import Header from '@/components/header'
+import filterFetch from '@/lib/job/filter-fetch'
+import { DocumentData } from 'firebase/firestore'
 
 export default function FindMatch() {
+  const [match, setMatch] = useState<DocumentData[]>([])
   const [filterData, setFilterData] = useState<Job>({
     location: 'Lagos',
     locationLocked: false,
@@ -17,8 +20,13 @@ export default function FindMatch() {
     type: 'PRIVATE',
   })
 
-  const handlePublish = async () => {
-    // Call the publish lib fn.
+  const handlePublish = () => {
+    setFilterData(pre => ({...pre, ['type']: 'PUBLIC'}))
+  }
+
+  const handleFilter = async () => {
+    const result = await filterFetch(filterData)
+    setMatch(result)
   }
 
   return (
@@ -58,7 +66,7 @@ export default function FindMatch() {
           </div>
         </div>
         <div className='px-10'>
-          <form className='flex flex-col justify-start items-start gap-5 ml-5'>
+          <form className='flex flex-col justify-start items-start gap-5 ml-5' onSubmit={handleFilter}>
             <label
               htmlFor='locked-location'
               className='flex flex-col gap-1 items-start justify-start'
@@ -121,7 +129,7 @@ export default function FindMatch() {
               </select>
             </label>
           </form>
-          <Button primary reg>
+          <Button onClick={() => handlePublish()} primary reg>
             Publish
           </Button>
         </div>
