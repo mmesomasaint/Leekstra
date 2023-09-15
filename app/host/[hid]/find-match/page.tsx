@@ -28,7 +28,7 @@ export default function FindMatch() {
 
   const handleFilter = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault()
-    
+
     const result = await filterFetch(filterData)
     setMatch(result)
   }
