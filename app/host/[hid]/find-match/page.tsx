@@ -136,7 +136,7 @@ export default function FindMatch() {
                 <option value='Small'>Small</option>
               </select>
             </label>
-            <div className='flex justify-start items-center gap-20'>
+            <div className='flex justify-start items-center gap-10'>
               <Button type='submit' primary reg>
                 Search
               </Button>
