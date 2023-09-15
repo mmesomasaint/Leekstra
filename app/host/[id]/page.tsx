@@ -11,7 +11,6 @@ import { useAuthContext } from '../auth/auth-context'
 export default function Profile({ params }: { params: { hid: string } }) {
   const { user } = useAuthContext()
   const router = useRouter()
-  console.log(user)
 
   useEffect(() => {
     const validateURL = async (urlid: string, uid?: string) => {
