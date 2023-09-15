@@ -1,4 +1,4 @@
-import {useState} from 'react'
+import { useState } from 'react'
 import Image from 'next/image'
 import type { Job } from '@/lib/job/types'
 import Button from '@/components/button'
@@ -6,17 +6,17 @@ import Header from '@/components/header'
 
 export default function FindMatch() {
   const [filterData, setFilterData] = useState<Job>({
-    location: "Lagos",
+    location: 'Lagos',
     locationLocked: false,
     budget: {
-        from: 500,
-        to: 1000
+      from: 500,
+      to: 1000,
     },
     pay: 50,
     class: 'MAX',
-    type: 'PRIVATE'
+    type: 'PRIVATE',
   })
-  
+
   const handlePublish = async () => {
     // Call the publish lib fn.
   }
