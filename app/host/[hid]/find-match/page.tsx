@@ -43,14 +43,14 @@ export default function FindMatch() {
           <form>
             <label
               htmlFor='locked-location'
-              className='flex flex-col gap-1 items-end justify-start'
+              className='flex flex-col gap-1 items-start justify-start'
             >
               <span>Location Lock</span>
               <input id='locked-location' type='checkbox' name='checkbox' />
             </label>
             <label
               htmlFor='budget'
-              className='flex flex-col gap-1 items-end justify-start'
+              className='flex flex-col gap-1 items-start justify-start'
             >
               <span>Budget</span>
               <div className='flex justify-start items-center gap-10'>
@@ -64,14 +64,14 @@ export default function FindMatch() {
             </label>
             <label
               htmlFor='pay'
-              className='flex flex-col gap-1 items-end justify-start'
+              className='flex flex-col gap-1 items-start justify-start'
             >
               <span>Pay</span>
               <input id='pay' type='number' name='pay' />
             </label>
             <label
               htmlFor='eventtype'
-              className='flex flex-col gap-1 items-end justify-start'
+              className='flex flex-col gap-1 items-start justify-start'
             >
               <span>Event Type</span>
               <select defaultValue={'Concert'}>
