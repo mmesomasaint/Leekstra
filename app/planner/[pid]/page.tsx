@@ -6,6 +6,7 @@ import { useAuthContext } from '../auth/auth-context'
 import Header from '@/components/header'
 import Image from 'next/image'
 import getPlanner from '@/lib/auth/planner/getPlanner'
+import Button from '@/components/button'
 
 export default function Profile({ params }: { params: { pid: string } }) {
   const { planner } = useAuthContext()
@@ -31,6 +32,8 @@ export default function Profile({ params }: { params: { pid: string } }) {
       <Header size='xl'>Profile</Header>
       <div className='grid grid-cols-3 place-items-stretch gap-10 p-10'>
         <div className='col-span-2 p-5 flex flex-col gap-5'>
+          <div className='flex justify-between items-center gap-10'>
+            <div className='grow'>
           <Image
             src='/imgs/male-avatar.jpg'
             width={200}
@@ -43,6 +46,11 @@ export default function Profile({ params }: { params: { pid: string } }) {
           <span className='text-lg font-semibold text-black/75'>
             Location: Enugu, Nigeria
           </span>
+          </div>
+          <Button primary reg>
+            Edit Profile
+          </Button>
+          </div>
         </div>
         <div className='p-5'>
           <span className='text-lg font-semibold text-black/75'>
