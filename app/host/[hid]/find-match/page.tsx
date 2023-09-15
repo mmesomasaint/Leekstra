@@ -91,7 +91,10 @@ export default function FindMatch() {
             >
               <span>Budget:</span>
               <div className='flex flex-col justify-start items-center gap-10 ml-5'>
-                <label htmlFor='from' className='flex gap-2'>
+                <label
+                  htmlFor='from'
+                  className='flex flex-col gap-1 items-start justify-start'
+                >
                   <p className='text-base'>From</p>
                   <input
                     id='from'
@@ -100,7 +103,10 @@ export default function FindMatch() {
                     className='border border-zinc-600/50 rounded-xl p-3 focus:outline-blue-500/50'
                   />
                 </label>
-                <label htmlFor='to' className='flex gap-2'>
+                <label
+                  htmlFor='to'
+                  className='flex flex-col gap-1 items-start justify-start'
+                >
                   <p className='text-base'>To</p>
                   <input
                     id='to'
