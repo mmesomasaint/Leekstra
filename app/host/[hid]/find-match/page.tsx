@@ -21,7 +21,7 @@ export default function FindMatch() {
   })
 
   const handlePublish = () => {
-    setFilterData(pre => ({...pre, ['type']: 'PUBLIC'}))
+    setFilterData((pre) => ({ ...pre, ['type']: 'PUBLIC' }))
   }
 
   const handleFilter = async () => {
@@ -66,7 +66,10 @@ export default function FindMatch() {
           </div>
         </div>
         <div className='px-10'>
-          <form className='flex flex-col justify-start items-start gap-5 ml-5' onSubmit={handleFilter}>
+          <form
+            className='flex flex-col justify-start items-start gap-5 ml-5'
+            onSubmit={handleFilter}
+          >
             <label
               htmlFor='locked-location'
               className='flex flex-col gap-1 items-start justify-start'
