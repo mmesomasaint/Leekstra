@@ -3,6 +3,16 @@ import Header from '@/components/header'
 import Image from 'next/image'
 
 export default function FindMatch() {
+  const [filterData, setFilterData] = useState({
+    locationLock: Boolean,
+    budget: {from: Number, to: number},
+    class: string,
+
+  })
+  const handlePublish = async () => {
+    // Call the publish lib fn.
+  }
+
   return (
     <div className='px-10'>
       <Header size='xl'>Best Match</Header>
@@ -95,7 +105,7 @@ export default function FindMatch() {
               htmlFor='eventtype'
               className='flex flex-col gap-1 items-start justify-start'
             >
-              <p>Event Type</p>
+              <p>Event Class</p>
               <select defaultValue={'Concert'}>
                 <option value='Big'>Big</option>
                 <option value='Mid'>Mid</option>
