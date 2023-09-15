@@ -9,23 +9,23 @@ import Header from '@/components/header'
 import { useAuthContext } from '../auth/auth-context'
 
 export default function Profile({ params }: { params: { hid: string } }) {
-  const { user } = useAuthContext()
+  const { host } = useAuthContext()
   const router = useRouter()
 
   useEffect(() => {
-    const validateURL = async (urlid: string, uid?: string) => {
+    const validateURL = async (hid: string, uid?: string) => {
       // Get the currenct user
-      const host = await getHost(uid)
+      const authHost = await getHost(uid)
 
       // Check if the current signed in user is the same with url.
       // If not redirect to a view only section of the profile.
       // If not authenticated, ask host to login
-      if (!host) router.replace('/host/auth/login')
-      else if (host?.urlid !== urlid) router.replace(`/profile/${urlid}`)
+      if (!authHost) router.replace('/host/auth/login')
+      else if (authHost?.uid !== hid) router.replace(`/profile/${hid}`)
     }
 
-    validateURL(params.hid, user?.uid)
-  }, [user, params.hid])
+    validateURL(params.hid, host?.uid)
+  }, [host, params.hid])
 
   return (
     <div className='px-10'>
@@ -45,7 +45,7 @@ export default function Profile({ params }: { params: { hid: string } }) {
             Name: Emeka D Stalleon
           </span>
           <span className='text-lg font-semibold text-black/75'>
-            Email: {user?.email}
+            Email: {host?.email}
           </span>
           <span className='text-lg font-semibold text-black/75'>
             Location: Enugu, Nigeria
