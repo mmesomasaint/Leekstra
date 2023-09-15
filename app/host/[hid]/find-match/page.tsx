@@ -40,13 +40,14 @@ export default function FindMatch() {
           </div>
         </div>
         <div className='px-10'>
-          <form>
+          <form
+          className='flex flex-col justify-start items-start gap-5 ml-5'>
             <label
               htmlFor='locked-location'
               className='flex flex-col gap-1 items-start justify-start'
             >
-              <span>Location Lock</span>
-              <input id='locked-location' type='checkbox' name='checkbox' />
+              <p>Location Lock</p>
+              <input id='locked-location' type='checkbox' name='checkbox' className='border border-zinc-600/50 rounded-xl p-3 focus:outline-blue-500/50' />
             </label>
             <label
               htmlFor='budget'
@@ -55,10 +56,12 @@ export default function FindMatch() {
               <span>Budget</span>
               <div className='flex justify-start items-center gap-10'>
                 <label htmlFor='from' className='flex gap-2'>
-                  <input id='from' type='number' name='from' />
+                  <p className='text-base'>From</p>
+                  <input id='from' type='number' name='from' className='border border-zinc-600/50 rounded-xl p-3 focus:outline-blue-500/50' />
                 </label>
                 <label htmlFor='to' className='flex gap-2'>
-                  <input id='to' type='number' name='to' />
+                  <p className='text-base'>To</p>
+                  <input id='to' type='number' name='to' className='border border-zinc-600/50 rounded-xl p-3 focus:outline-blue-500/50' />
                 </label>
               </div>
             </label>
@@ -66,17 +69,17 @@ export default function FindMatch() {
               htmlFor='pay'
               className='flex flex-col gap-1 items-start justify-start'
             >
-              <span>Pay</span>
-              <input id='pay' type='number' name='pay' />
+              <p>Pay</p>
+              <input id='pay' type='number' name='pay' className='border border-zinc-600/50 rounded-xl p-3 focus:outline-blue-500/50' />
             </label>
             <label
               htmlFor='eventtype'
               className='flex flex-col gap-1 items-start justify-start'
             >
-              <span>Event Type</span>
+              <p>Event Type</p>
               <select defaultValue={'Concert'}>
                 <option value='Big'>Big</option>
-                <option value='Mid'>MId</option>
+                <option value='Mid'>Mid</option>
                 <option value='Small'>Small</option>
               </select>
             </label>
