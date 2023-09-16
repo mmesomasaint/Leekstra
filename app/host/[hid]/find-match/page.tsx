@@ -24,25 +24,37 @@ export default function FindMatch() {
     type: 'PRIVATE',
   })
 
-  // Some quick fns
+  /** Set the filter data pay section with passed value */
   const setPay = (pay: number) =>
     setFilterData((prev) => ({ ...prev, ['pay']: pay }))
+  
+  /** Set the filter data class section with passed value */
   const setClass = (newClass: 'MIN' | 'MID' | 'MAX') =>
     setFilterData((prev) => ({ ...prev, ['class']: newClass }))
+
+  /** Set the filter data budget-from section with passed value */
   const setBudgetFrom = (from: number) =>
     setFilterData((prev) => ({
       ...prev,
       ['budget']: { ...prev.budget, ['from']: from },
     }))
+
+  /** Set the filter data budget-to section with passed value */
   const setBudgetTo = (to: number) =>
     setFilterData((prev) => ({
       ...prev,
       ['budget']: { ...prev.budget, ['to']: to },
     }))
+
+  /** Set the filter data location section with passed value */
   const setLocation = (loc: string) =>
     setFilterData((prev) => ({ ...prev, ['location']: loc }))
+  
+  /** Set the filter data location-locked section with passed value */
   const setLocationLocked = (isLocked: boolean) =>
     setFilterData((prev) => ({ ...prev, ['locationLocked']: isLocked }))
+    
+  /** Set the filter data type section with passed value */
   const setType = (type: 'PRIVATE' | 'PUBLIC') =>
     setFilterData((prev) => ({ ...prev, ['type']: type }))
 
