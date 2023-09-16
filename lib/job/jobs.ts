@@ -13,9 +13,7 @@ import firebase_app from '../firebase'
 const db = getFirestore(firebase_app)
 const jobsRef = collection(db, 'jobs')
 
-export async function jobsWithoutCursor(
-  first: number
-) {
+export async function jobsWithoutCursor(first: number) {
   const q = query(
     jobsRef,
     where('type', '>=', 'PUBLIC'),
@@ -33,10 +31,7 @@ export async function jobsWithoutCursor(
   return querySnap
 }
 
-export async function jobsWithCursor(
-  first: number,
-  afterIdx: string
-) {
+export async function jobsWithCursor(first: number, afterIdx: string) {
   const q = query(
     jobsRef,
     where('type', '>=', 'PUBLIC'),
