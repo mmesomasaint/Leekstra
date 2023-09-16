@@ -14,7 +14,7 @@ import firebase_app from '../firebase'
 const db = getFirestore(firebase_app)
 const plannersRef = collection(db, 'planners')
 
-export default async function filterFetch(job: Job, afterIdx?: string, first: number) {
+export default async function filterFetch(job: Job, first: number, afterIdx?: string) {
   const q = query(
     plannersRef,
     where('locationDep', '==', job.locationLocked),
