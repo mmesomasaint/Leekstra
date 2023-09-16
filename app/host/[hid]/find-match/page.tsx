@@ -66,7 +66,7 @@ export default function FindMatch() {
     e.preventDefault()
 
     const first = 2
-    const last = match.pop()
+    const last = match.pop() ?? {uid: ''}
     setMatch([]) // Empty match
     const result = await filterFetch(filterData, first, last?.uid)
     setMatch(result) // Fill up match
