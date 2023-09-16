@@ -25,13 +25,26 @@ export default function FindMatch() {
   })
 
   // Some quick fns
-  const setPay = (pay: number) => setFilterData(prev => ({...prev, ['pay']: pay}))
-  const setClass = (newClass: 'MIN' | 'MID' | 'MAX') => setFilterData(prev => ({...prev, ['class']: newClass}))
-  const setBudgetFrom = (from: number) => setFilterData(prev => ({...prev, ['budget']: {...prev.budget, ['from']: from}}))
-  const setBudgetTo = (to: number) => setFilterData(prev => ({...prev, ['budget']: {...prev.budget, ['to']: to}}))
-  const setLocation = (loc: string) => setFilterData(prev => ({...prev, ['location']: loc}))
-  const setLocationLocked = (isLocked: boolean) => setFilterData(prev => ({...prev, ['locationLocked']: isLocked}))
-  const setType = (type: 'PRIVATE' | 'PUBLIC') => setFilterData(prev => ({...prev, ['type']: type}))
+  const setPay = (pay: number) =>
+    setFilterData((prev) => ({ ...prev, ['pay']: pay }))
+  const setClass = (newClass: 'MIN' | 'MID' | 'MAX') =>
+    setFilterData((prev) => ({ ...prev, ['class']: newClass }))
+  const setBudgetFrom = (from: number) =>
+    setFilterData((prev) => ({
+      ...prev,
+      ['budget']: { ...prev.budget, ['from']: from },
+    }))
+  const setBudgetTo = (to: number) =>
+    setFilterData((prev) => ({
+      ...prev,
+      ['budget']: { ...prev.budget, ['to']: to },
+    }))
+  const setLocation = (loc: string) =>
+    setFilterData((prev) => ({ ...prev, ['location']: loc }))
+  const setLocationLocked = (isLocked: boolean) =>
+    setFilterData((prev) => ({ ...prev, ['locationLocked']: isLocked }))
+  const setType = (type: 'PRIVATE' | 'PUBLIC') =>
+    setFilterData((prev) => ({ ...prev, ['type']: type }))
 
   const handlePublish = () => {
     setType(PUBLIC)
