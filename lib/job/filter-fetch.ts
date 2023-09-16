@@ -27,7 +27,6 @@ export default async function filterFetch(
     where('locationDep', '==', job.locationLocked),
     where('class', '==', job.class),
     orderBy('budget', 'asc'),
-    startAfter(afterIdx),
     limit(first)
   )
   const querySnap = await getDocs(q)
