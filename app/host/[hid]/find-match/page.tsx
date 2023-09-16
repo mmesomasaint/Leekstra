@@ -8,6 +8,8 @@ import Header from '@/components/header'
 import filterFetch from '@/lib/job/filter-fetch'
 import { DocumentData } from 'firebase/firestore'
 
+const PUBLIC = 'PUBLIC'
+
 export default function FindMatch() {
   const [match, setMatch] = useState<DocumentData[]>([])
   const [filterData, setFilterData] = useState<Job>({
@@ -22,8 +24,17 @@ export default function FindMatch() {
     type: 'PRIVATE',
   })
 
+  // Some quick fns
+  const setPay = (pay: number) => setFilterData(prev => ({...prev, ['pay']: pay}))
+  const setClass = (newClass: 'MIN' | 'MID' | 'MAX') => setFilterData(prev => ({...prev, ['class']: newClass}))
+  const setBudgetFrom = (from: number) => setFilterData(prev => ({...prev, ['budget']: {...prev.budget, ['from']: from}}))
+  const setBudgetTo = (to: number) => setFilterData(prev => ({...prev, ['budget']: {...prev.budget, ['to']: to}}))
+  const setLocation = (loc: string) => setFilterData(prev => ({...prev, ['location']: loc}))
+  const setLocationLocked = (isLocked: boolean) => setFilterData(prev => ({...prev, ['locationLocked']: isLocked}))
+  const setType = (type: 'PRIVATE' | 'PUBLIC') => setFilterData(prev => ({...prev, ['type']: type}))
+
   const handlePublish = () => {
-    setFilterData((pre) => ({ ...pre, ['type']: 'PUBLIC' }))
+    setType(PUBLIC)
   }
 
   const handleFilter = async (e: FormEvent<HTMLFormElement>) => {
