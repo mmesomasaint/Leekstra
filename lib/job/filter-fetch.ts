@@ -2,6 +2,7 @@ import {
   getFirestore,
   query,
   where,
+  and,
   orderBy,
   limit,
   startAfter,
@@ -21,12 +22,11 @@ export default async function filterFetch(
 ) {
   const q = query(
     plannersRef,
+    where('budget', '>=', job.budget.from), 
+    where('budget', '<=', job.budget.to),
     where('locationDep', '==', job.locationLocked),
-    where('budgetStartRange', '==', job.budget.from),
-    where('budgetEndRange', '==', job.budget.to),
-    where('pay', '==', job.pay),
     where('class', '==', job.class),
-    orderBy('id', 'asc'),
+    orderBy('budget', 'asc'),
     startAfter(afterIdx),
     limit(first)
   )

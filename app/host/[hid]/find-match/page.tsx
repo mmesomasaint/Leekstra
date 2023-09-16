@@ -24,6 +24,8 @@ export default function FindMatch() {
     type: 'PRIVATE',
   })
 
+  console.log(match)
+
   /** Set the filter data pay section with passed value */
   const setPay = (pay: number) =>
     setFilterData((prev) => ({ ...prev, ['pay']: pay }))
