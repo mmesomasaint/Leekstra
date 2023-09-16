@@ -2,7 +2,7 @@
 
 import { useState, FormEvent } from 'react'
 import Image from 'next/image'
-import type { Job } from '@/lib/job/types'
+import type { Job, JobFieldClass, JobFieldType } from '@/lib/job/types'
 import Button from '@/components/button'
 import Header from '@/components/header'
 import filterFetch from '@/lib/job/filter-fetch'
@@ -27,9 +27,9 @@ export default function FindMatch() {
   /** Set the filter data pay section with passed value */
   const setPay = (pay: number) =>
     setFilterData((prev) => ({ ...prev, ['pay']: pay }))
-  
+
   /** Set the filter data class section with passed value */
-  const setClass = (newClass: 'MIN' | 'MID' | 'MAX') =>
+  const setClass = (newClass: JobFieldClass) =>
     setFilterData((prev) => ({ ...prev, ['class']: newClass }))
 
   /** Set the filter data budget-from section with passed value */
@@ -49,13 +49,13 @@ export default function FindMatch() {
   /** Set the filter data location section with passed value */
   const setLocation = (loc: string) =>
     setFilterData((prev) => ({ ...prev, ['location']: loc }))
-  
+
   /** Set the filter data location-locked section with passed value */
   const setLocationLocked = (isLocked: boolean) =>
     setFilterData((prev) => ({ ...prev, ['locationLocked']: isLocked }))
-    
+
   /** Set the filter data type section with passed value */
-  const setType = (type: 'PRIVATE' | 'PUBLIC') =>
+  const setType = (type: JobFieldType) =>
     setFilterData((prev) => ({ ...prev, ['type']: type }))
 
   const handlePublish = () => {

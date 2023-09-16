@@ -3,6 +3,10 @@ export type Job = {
   locationLocked: boolean
   budget: {from: number, to: number}
   pay: number
-  class: 'MAX' | 'MID' | 'MIN'
-  type: 'PUBLIC' | 'PRIVATE'
+  class: JobFieldClass
+  type: JobFieldType
 }
+
+export type JobFieldType = 'PUBLIC' | 'PRIVATE'
+
+export type JobFieldClass = 'MAX' | 'MID' | 'MIN'
