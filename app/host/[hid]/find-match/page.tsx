@@ -201,7 +201,7 @@ export default function FindMatch() {
                 value={filterData.class}
                 defaultValue={'MAX'}
                 className='border border-zinc-600/50 rounded-xl p-3 focus:outline-blue-500/50'
-                onChange={(e) => e.target.value}
+                onChange={(e) => setClass(e.target.value as JobFieldClass)}
               >
                 <option value='MAX'>MAX</option>
                 <option value='MID'>MID</option>
