@@ -123,7 +123,9 @@ export default function FindMatch() {
                 id='locked-location'
                 type='checkbox'
                 name='checkbox'
+                checked={filterData.locationLocked}
                 className='border border-zinc-600/50 rounded-xl p-3 focus:outline-blue-500/50'
+                onChange={(e) => setLocationLocked(e.target.checked)}
               />
             </label>
             <label
@@ -141,7 +143,9 @@ export default function FindMatch() {
                     id='from'
                     type='number'
                     name='from'
+                    value={filterData.budget.from}
                     className='border border-zinc-600/50 rounded-xl p-3 focus:outline-blue-500/50'
+                    onChange={(e) => setBudgetFrom(parseInt(e.target.value))}
                   />
                 </label>
                 <label
@@ -153,7 +157,9 @@ export default function FindMatch() {
                     id='to'
                     type='number'
                     name='to'
+                    value={filterData.budget.to}
                     className='border border-zinc-600/50 rounded-xl p-3 focus:outline-blue-500/50'
+                    onChange={(e) => setBudgetTo(parseInt(e.target.value))}
                   />
                 </label>
               </div>
@@ -167,7 +173,9 @@ export default function FindMatch() {
                 id='pay'
                 type='number'
                 name='pay'
+                value={filterData.pay}
                 className='border border-zinc-600/50 rounded-xl p-3 focus:outline-blue-500/50'
+                onChange={(e) => setPay(parseInt(e.target.value))}
               />
             </label>
             <label
@@ -176,8 +184,10 @@ export default function FindMatch() {
             >
               <p>Event Class</p>
               <select
+                value={filterData.class}
                 defaultValue={'Concert'}
                 className='border border-zinc-600/50 rounded-xl p-3 focus:outline-blue-500/50'
+                onChange={(e) => e.target.value}
               >
                 <option value='Big'>Big</option>
                 <option value='Mid'>Mid</option>
