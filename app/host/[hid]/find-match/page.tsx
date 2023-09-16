@@ -79,36 +79,21 @@ export default function FindMatch() {
       <Header size='l'>Best Match</Header>
       <div className='grid grid-cols-3 gap-10'>
         <div className='col-span-2 flex flex-col justify-start items-stretch gap-8 px-10'>
+          {match.map(planner => (
           <div className='flex justify-start items-center gap-10 shadow-md rounded-2xl bg-gray-400/10 p-10'>
             <Image
-              src='/'
+              src={planner.photoURL ?? `/imgs/male-avatar.jpg`}
               width={150}
               height={150}
               alt='avatar'
               className='shadow-md'
             />
-            <span>Name: daniel O&apos;brien</span>
+            <div className='flex justify-start items-center gap-7'>
+            <span>Name: {planner.displayName ?? 'John Doe'}</span>
+            <span>Email: {planner.email ?? 'example@email.com'}</span>
+            </div>
           </div>
-          <div className='flex justify-start items-center gap-10 shadow-md rounded-2xl bg-gray-400/10 p-10'>
-            <Image
-              src='/'
-              width={150}
-              height={150}
-              alt='avatar'
-              className='shadow-md'
-            />
-            <span>Name: daniel O&apos;brien</span>
-          </div>
-          <div className='flex justify-start items-center gap-10 shadow-md rounded-2xl bg-gray-400/10 p-10'>
-            <Image
-              src='/'
-              width={150}
-              height={150}
-              alt='avatar'
-              className='shadow-md'
-            />
-            <span>Name: daniel O&apos;brien</span>
-          </div>
+          ))}
         </div>
         <div className='px-10'>
           <Header size='l'>Filter</Header>
