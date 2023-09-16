@@ -28,6 +28,8 @@ export default async function register(email: string, password: string) {
       budgetEndRange: null,
       pay: null,
       class: null,
+      chats: null,
+      proposals: null
     }
 
     // Create user in planners db, and the local variable
