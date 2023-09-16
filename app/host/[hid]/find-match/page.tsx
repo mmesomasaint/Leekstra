@@ -185,13 +185,13 @@ export default function FindMatch() {
               <p>Event Class</p>
               <select
                 value={filterData.class}
-                defaultValue={'Concert'}
+                defaultValue={'MAX'}
                 className='border border-zinc-600/50 rounded-xl p-3 focus:outline-blue-500/50'
                 onChange={(e) => e.target.value}
               >
-                <option value='Big'>Big</option>
-                <option value='Mid'>Mid</option>
-                <option value='Small'>Small</option>
+                <option value='MAX'>MAX</option>
+                <option value='MID'>MID</option>
+                <option value='MIN'>MIN</option>
               </select>
             </label>
             <div className='flex justify-start items-center gap-10'>
