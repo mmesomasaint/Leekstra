@@ -3,6 +3,7 @@ import {
   query,
   where,
   orderBy,
+  limit,
   startAfter,
   collection,
   getDocs,
@@ -13,7 +14,7 @@ import firebase_app from '../firebase'
 const db = getFirestore(firebase_app)
 const plannersRef = collection(db, 'planners')
 
-export default async function filterFetch(job: Job, afterIdx?: string) {
+export default async function filterFetch(job: Job, afterIdx?: string, first: number) {
   const q = query(
     plannersRef,
     where('locationDep', '==', job.locationLocked),
@@ -22,7 +23,8 @@ export default async function filterFetch(job: Job, afterIdx?: string) {
     where('pay', '==', job.pay),
     where('class', '==', job.class),
     orderBy('id', 'asc'),
-    startAfter(afterIdx)
+    startAfter(afterIdx),
+    limit(first)
   )
   const querySnap = await getDocs(q)
   const docs = querySnap.docs.map((doc) => doc.data())
