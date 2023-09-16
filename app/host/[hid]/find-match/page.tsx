@@ -199,7 +199,6 @@ export default function FindMatch() {
               <p>Event Class</p>
               <select
                 value={filterData.class}
-                defaultValue={'MAX'}
                 className='border border-zinc-600/50 rounded-xl p-3 focus:outline-blue-500/50'
                 onChange={(e) => setClass(e.target.value as JobFieldClass)}
               >
