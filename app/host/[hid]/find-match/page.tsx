@@ -121,7 +121,7 @@ export default function FindMatch() {
               <p>Location</p>
               <input
                 id='location'
-                type='number'
+                type='text'
                 name='location'
                 value={filterData.location}
                 className='border border-zinc-600/50 rounded-xl p-3 focus:outline-blue-500/50'
