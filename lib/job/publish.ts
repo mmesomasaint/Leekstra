@@ -11,10 +11,10 @@ export default async function publish(job: Job, hostId: string) {
       ...job,
       hostId,
       invitees: [],
-      proposals: []
+      proposals: [],
     }
     await setDoc(doc(jobsRef), data)
-  } catch(e) {
+  } catch (e) {
     console.log(e)
   }
 }
