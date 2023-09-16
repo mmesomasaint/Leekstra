@@ -29,8 +29,11 @@ export default function FindMatch() {
   const handleFilter = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault()
 
-    const result = await filterFetch(filterData)
-    setMatch(result)
+    const first = 2
+    const last = match.pop()
+    setMatch([]) // Empty match
+    const result = await filterFetch(filterData, first, last?.uid)
+    setMatch(result) // Fill up match
   }
 
   return (
