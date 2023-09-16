@@ -1,31 +1,12 @@
 'use client'
 
-import { useEffect } from 'react'
-import { useRouter } from 'next/navigation'
 import Image from 'next/image'
-import getHost from '@/lib/auth/host/getHost'
 import Button from '@/components/button'
 import Header from '@/components/header'
 import { useAuthContext } from '../auth/auth-context'
 
-export default function Profile({ params }: { params: { hid: string } }) {
+export default function Profile() {
   const { host } = useAuthContext()
-  const router = useRouter()
-
-  useEffect(() => {
-    const validateURL = async (hid: string, uid?: string) => {
-      // Get the currenct user
-      const authHost = await getHost(uid)
-
-      // Check if the current signed in user is the same with url.
-      // If not redirect to a view only section of the profile.
-      // If not authenticated, ask host to login
-      if (!authHost) router.replace('/host/auth/login')
-      else if (authHost?.uid !== hid) router.replace(`/profile/${hid}`)
-    }
-
-    validateURL(params.hid, host?.uid)
-  }, [host, params.hid])
 
   return (
     <div className='px-10'>
