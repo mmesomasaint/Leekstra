@@ -115,6 +115,20 @@ export default function FindMatch() {
             onSubmit={handleFilter}
           >
             <label
+              htmlFor='location'
+              className='flex flex-col gap-1 items-start justify-start'
+            >
+              <p>Location</p>
+              <input
+                id='location'
+                type='number'
+                name='location'
+                value={filterData.location}
+                className='border border-zinc-600/50 rounded-xl p-3 focus:outline-blue-500/50'
+                onChange={(e) => setLocation(e.target.value)}
+              />
+            </label>
+            <label
               htmlFor='locked-location'
               className='flex flex-col gap-1 items-start justify-start'
             >
