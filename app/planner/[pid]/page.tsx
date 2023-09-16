@@ -15,22 +15,22 @@ export default function Profile() {
         <div className='col-span-2 p-5 flex flex-col gap-5'>
           <div className='flex justify-between items-center gap-10'>
             <div className='grow'>
-          <Image
-            src='/imgs/male-avatar.jpg'
-            width={200}
-            height={200}
-            alt='avatar'
-          />
-          <span className='text-lg font-semibold text-black/75'>
-            Name: Emeka D Stalleon
-          </span>
-          <span className='text-lg font-semibold text-black/75'>
-            Location: Enugu, Nigeria
-          </span>
-          </div>
-          <Button primary reg>
-            Edit Profile
-          </Button>
+              <Image
+                src='/imgs/male-avatar.jpg'
+                width={200}
+                height={200}
+                alt='avatar'
+              />
+              <span className='text-lg font-semibold text-black/75'>
+                Name: Emeka D Stalleon
+              </span>
+              <span className='text-lg font-semibold text-black/75'>
+                Location: Enugu, Nigeria
+              </span>
+            </div>
+            <Button primary reg>
+              Edit Profile
+            </Button>
           </div>
         </div>
         <div className='p-5'>
