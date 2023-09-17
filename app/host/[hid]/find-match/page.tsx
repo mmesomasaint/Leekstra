@@ -7,10 +7,13 @@ import Button from '@/components/button'
 import Header from '@/components/header'
 import filterFetch from '@/lib/job/filter-fetch'
 import { DocumentData } from 'firebase/firestore'
+import invite from '@/lib/job/invite'
+import { useAuthContext } from '../../auth/auth-context'
 
 const PUBLIC = 'PUBLIC'
 
 export default function FindMatch() {
+  const {host} = useAuthContext()
   const [match, setMatch] = useState<DocumentData[]>([])
   const [filterData, setFilterData] = useState<Job>({
     location: 'Lagos',
@@ -72,6 +75,10 @@ export default function FindMatch() {
     setMatch([]) // Empty match
     const result = await filterFetch(filterData, first, last?.uid)
     setMatch(result) // Fill up match
+  }
+
+  const handleInvite = async (plannerId: string) => {
+    if (host) await invite(host.uid, plannerId, filterData)
   }
 
   return (
