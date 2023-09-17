@@ -1,12 +1,13 @@
-import firebase_app from "../firebase";
-import { Job } from "./types";
-import { getFirestore, addDoc, collection,  } from "firebase/firestore";
+import firebase_app from '../firebase'
+import { Job } from './types'
+import { getFirestore, addDoc, collection } from 'firebase/firestore'
 
 const db = getFirestore(firebase_app)
 const jobsRef = collection(db, 'jobs')
 
 export default async function create(job: Job, title: string, hostId: string) {
-  let id = null, error = null
+  let id = null,
+    error = null
   try {
     const data = {
       ...job,
@@ -15,12 +16,12 @@ export default async function create(job: Job, title: string, hostId: string) {
       invitees: [],
       proposals: [],
     }
-  
+
     const jobDoc = await addDoc(jobsRef, data)
     id = jobDoc.id
-  } catch(e) {
+  } catch (e) {
     error = e
   }
 
-  return {id, error}
+  return { id, error }
 }

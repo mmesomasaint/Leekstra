@@ -8,11 +8,11 @@ const jobsRef = collection(db, 'jobs')
 
 export default async function publish(job: Job, hostId: string, title: string) {
   try {
-    const {id} = await create(job, title, hostId)
+    const { id } = await create(job, title, hostId)
     if (id) {
-      const newJobRef = doc(jobsRef, id) 
-      await setDoc(newJobRef, {type: 'PUBLIC'}, {merge: true})
-    } else throw new Error("Error publishing job...")
+      const newJobRef = doc(jobsRef, id)
+      await setDoc(newJobRef, { type: 'PUBLIC' }, { merge: true })
+    } else throw new Error('Error publishing job...')
   } catch (e) {
     console.log(e)
   }
