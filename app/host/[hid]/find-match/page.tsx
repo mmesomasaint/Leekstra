@@ -13,7 +13,7 @@ import { useAuthContext } from '../../auth/auth-context'
 const PUBLIC = 'PUBLIC'
 
 export default function FindMatch() {
-  const {host} = useAuthContext()
+  const { host } = useAuthContext()
   const [match, setMatch] = useState<DocumentData[]>([])
   const [filterData, setFilterData] = useState<Job>({
     location: 'Lagos',
@@ -95,9 +95,10 @@ export default function FindMatch() {
                 alt='avatar'
                 className='shadow-md'
               />
-              <div className='flex justify-start items-center gap-7'>
+              <div className='flex flex-col justify-start items-center gap-5'>
                 <span>Name: {planner.displayName ?? 'John Doe'}</span>
                 <span>Email: {planner.email ?? 'example@email.com'}</span>
+                <Button reg>Send invite</Button>
               </div>
             </div>
           ))}
