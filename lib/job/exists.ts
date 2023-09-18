@@ -1,6 +1,3 @@
-// Return if it exists 
-// return null if it doesn't exist.
-
 import { collection, getFirestore, where, query, getDocs } from "firebase/firestore";
 import firebase_app from "../firebase";
 
