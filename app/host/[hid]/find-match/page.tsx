@@ -10,6 +10,7 @@ import filterFetch from '@/lib/job/filter-fetch'
 import { DocumentData } from 'firebase/firestore'
 import invite from '@/lib/job/invite'
 import { useAuthContext } from '../../auth/auth-context'
+import Card from '@/components/planner/card';
 
 export default function FindMatch() {
   const { host } = useAuthContext()
@@ -73,32 +74,13 @@ export default function FindMatch() {
     setMatch(result) // Fill up match
   }
 
-  const handleInvite = async (plannerId: string) => {
-    if (host) await invite(host.uid, plannerId, filterData)
-  }
-
   return (
     <div className='px-10'>
       <Header size='l'>Best Match</Header>
       <div className='grid grid-cols-3 gap-10'>
         <div className='col-span-2 flex flex-col justify-start items-stretch gap-8 px-10'>
           {match.map((planner) => (
-            <div className='flex justify-start items-center gap-10 shadow-md rounded-2xl bg-gray-400/10 p-10'>
-              <Image
-                src={planner.photoURL ?? `/imgs/male-avatar.jpg`}
-                width={150}
-                height={150}
-                alt='avatar'
-                className='shadow-md'
-              />
-              <div className='flex flex-col justify-start items-center gap-5'>
-                <span>Name: {planner.displayName ?? 'John Doe'}</span>
-                <span>Email: {planner.email ?? 'example@email.com'}</span>
-                <Button onClick={() => handleInvite(planner.uid)} reg>
-                  Send invite
-                </Button>
-              </div>
-            </div>
+            <Card planner={planner} hid={host?.uid ?? ''} data={filterData} />
           ))}
         </div>
         <div className='px-10'>
