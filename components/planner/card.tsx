@@ -35,7 +35,7 @@ export default function Card({
         className='shadow-md'
       />
       <div className='flex flex-col justify-start items-center gap-5'>
-        <div className='flex justify-between items-center gap-10'>
+        <div className='flex justify-between items-center gap-10 w-full'>
           <div className='flex flex-col items-start gap-3'>
             <span>Name: {planner.displayName ?? 'John Doe'}</span>
             <span>Email: {planner.email ?? 'example@email.com'}</span>
