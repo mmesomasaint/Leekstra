@@ -59,12 +59,8 @@ export default function FindMatch() {
   const setLocationLocked = (isLocked: boolean) =>
     setFilterData((prev) => ({ ...prev, ['locationLocked']: isLocked }))
 
-  /** Set the filter data type section with passed value */
-  const setType = (type: JobFieldType) =>
-    setFilterData((prev) => ({ ...prev, ['type']: type }))
-
   const handlePublish = () => {
-    setType(PUBLIC)
+    
   }
 
   const handleFilter = async (e: FormEvent<HTMLFormElement>) => {
