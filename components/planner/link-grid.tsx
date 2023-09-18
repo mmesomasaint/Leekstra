@@ -13,6 +13,7 @@ export default function LinkGrid() {
         <Header size='xxl'>Leekstra</Header>
         <div className='flex justify-evenly items-center gap-5'>
           <LinkText href={`/planner/${planner?.uid}/`}>Profile</LinkText>
+          <LinkText href={`/planner/${planner?.uid}/find-job`}>Find Job</LinkText>
           <LinkText href={`/planner/${planner?.uid}/proposals`}>
             Proposals
           </LinkText>
