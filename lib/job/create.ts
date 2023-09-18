@@ -6,8 +6,7 @@ const db = getFirestore(firebase_app)
 const jobsRef = collection(db, 'jobs')
 
 export default async function create(job: Job, hostId: string, title?: string) {
-  let jobId,
-    error
+  let jobId, error
   try {
     const data = {
       ...job,

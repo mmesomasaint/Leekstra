@@ -20,7 +20,7 @@ export default async function invite(
   job: Job
 ) {
   try {
-    const {jobId} = await exists(job.hash) ?? await create(job, hostId)
+    const { jobId } = (await exists(job.hash)) ?? (await create(job, hostId))
 
     const data = { hostId, plannerId, jobId }
     const inviteDoc = await addDoc(invitesRef, data)
