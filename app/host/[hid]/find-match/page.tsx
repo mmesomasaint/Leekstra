@@ -10,8 +10,6 @@ import { DocumentData } from 'firebase/firestore'
 import invite from '@/lib/job/invite'
 import { useAuthContext } from '../../auth/auth-context'
 
-const PUBLIC = 'PUBLIC'
-
 export default function FindMatch() {
   const { host } = useAuthContext()
   const [match, setMatch] = useState<DocumentData[]>([])
