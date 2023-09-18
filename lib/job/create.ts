@@ -6,8 +6,8 @@ const db = getFirestore(firebase_app)
 const jobsRef = collection(db, 'jobs')
 
 export default async function create(job: Job, hostId: string, title?: string) {
-  let jobRef = null,
-    error = null
+  let jobId,
+    error
   try {
     const data = {
       ...job,
@@ -17,10 +17,11 @@ export default async function create(job: Job, hostId: string, title?: string) {
       proposals: [],
     }
 
-    jobRef = await addDoc(jobsRef, data)
+    const jobRef = await addDoc(jobsRef, data)
+    jobId = jobRef.id
   } catch (e) {
     error = e
   }
 
-  return { jobRef, error }
+  return { jobId, error }
 }
