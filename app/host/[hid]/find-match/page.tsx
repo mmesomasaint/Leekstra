@@ -24,6 +24,7 @@ export default function FindMatch() {
     pay: 50,
     class: 'MAX',
     type: 'PRIVATE',
+    hash: hashcode()
   })
 
   console.log(match)

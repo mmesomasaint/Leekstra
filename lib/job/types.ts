@@ -5,6 +5,7 @@ export type Job = {
   pay: number
   class: JobFieldClass
   type: JobFieldType
+  hash: string
 }
 
 export type JobFieldType = 'PUBLIC' | 'PRIVATE'
