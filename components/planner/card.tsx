@@ -1,11 +1,19 @@
-import {useState} from 'react'
+import { useState } from 'react'
 import invite from '@/lib/job/invite'
 import Image from 'next/image'
 import { DocumentData } from 'firebase/firestore'
 import { Job } from '@/lib/job/types'
 import Button from '../button'
 
-export default function Card({planner, hid, data}: {planner: DocumentData, hid: string, data: Job}) {
+export default function Card({
+  planner,
+  hid,
+  data,
+}: {
+  planner: DocumentData
+  hid: string
+  data: Job
+}) {
   const [btnText, setBtnText] = useState('Send invite')
   const [loading, setLoading] = useState(false)
   const handleInvite = () => {
@@ -28,17 +36,26 @@ export default function Card({planner, hid, data}: {planner: DocumentData, hid: 
       />
       <div className='flex flex-col justify-start items-center gap-5'>
         <div className='flex justify-between items-center gap-10'>
-        <div className='flex flex-col items-start gap-3'>
-        <span>Name: {planner.displayName ?? 'John Doe'}</span>
-        <span>Email: {planner.email ?? 'example@email.com'}</span>
-        <span>Location: Nigeria</span>
+          <div className='flex flex-col items-start gap-3'>
+            <span>Name: {planner.displayName ?? 'John Doe'}</span>
+            <span>Email: {planner.email ?? 'example@email.com'}</span>
+            <span>Location: Nigeria</span>
+          </div>
+          <Button
+            onClick={() => handleInvite()}
+            reg
+            disabled={loading || btnText === 'Sent'}
+          >
+            {btnText}
+          </Button>
         </div>
-        <Button onClick={() => handleInvite()} reg disabled={loading || (btnText === 'Sent')}>
-          {btnText}
-        </Button>
-        </div>
-        <p>I am a passionate and experienced event planner with over 5 years in the industry. I have a proven track record of planning and executing successful events of all sizes and types, from corporate conferences and trade shows to weddings and social gatherings.</p>
+        <p>
+          I am a passionate and experienced event planner with over 5 years in
+          the industry. I have a proven track record of planning and executing
+          successful events of all sizes and types, from corporate conferences
+          and trade shows to weddings and social gatherings.
+        </p>
       </div>
     </div>
-    )
+  )
 }
