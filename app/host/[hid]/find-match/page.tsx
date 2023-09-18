@@ -2,6 +2,7 @@
 
 import { useState, FormEvent } from 'react'
 import Image from 'next/image'
+import { v4 as hashcode } from 'uuid';
 import type { Job, JobFieldClass, JobFieldType } from '@/lib/job/types'
 import Button from '@/components/button'
 import Header from '@/components/header'
