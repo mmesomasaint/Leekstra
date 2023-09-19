@@ -24,7 +24,7 @@ export default function Button({
       onClick={onClick}
       className={`${
         primary ? 'bg-black/75 text-white' : 'bg-white text-black/75'
-      } border border-black/75 shadow-md rounded-md font-medium text-base ${
+      } border border-black/75 shadow-md rounded-md font-medium text-base disabled:text-black/30 border-black/30 ${
         reg && 'px-4 py-2'
       } ${className}`}
     >
