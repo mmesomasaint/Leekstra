@@ -74,7 +74,12 @@ export default function FindMatch() {
       <div className='grid grid-cols-3 gap-10'>
         <div className='col-span-2 flex flex-col justify-start items-stretch gap-8 px-10'>
           {match.map((planner) => (
-            <Card planner={planner} hid={host?.uid ?? ''} data={filterData} />
+            <Card
+              key={planner.uid}
+              planner={planner}
+              hid={host?.uid ?? ''}
+              data={filterData}
+            />
           ))}
         </div>
         <div className='px-10'>
