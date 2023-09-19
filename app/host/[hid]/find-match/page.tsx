@@ -9,10 +9,14 @@ import filterFetch from '@/lib/job/filter-fetch'
 import { DocumentData } from 'firebase/firestore'
 import { useAuthContext } from '../../auth/auth-context'
 import Card from '@/components/planner/card'
+import publish from '@/lib/job/publish'
 
 export default function FindMatch() {
   const { host } = useAuthContext()
   const [match, setMatch] = useState<DocumentData[]>([])
+  const [publishing, setPublishing] = useState<boolean>(false)
+  const [published, setPublished] = useState<boolean>(false)
+  const [searching, setSearching] = useState<boolean>(false)
   const [filterData, setFilterData] = useState<Job>({
     location: 'Lagos',
     locationLocked: false,
@@ -56,16 +60,29 @@ export default function FindMatch() {
   const setLocationLocked = (isLocked: boolean) =>
     setFilterData((prev) => ({ ...prev, ['locationLocked']: isLocked }))
 
-  const handlePublish = () => {}
+  const handlePublish = () => {
+    if (host) {
+      setPublishing(true)
+
+      publish(filterData, host.uid, 'PUBLIC JOB TESTING').then((result) => {
+        setPublished(true)
+        setPublishing(false)
+      })
+    }
+  }
 
   const handleFilter = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault()
 
+    setSearching(true)
     const first = 2
     const last = match.pop() ?? { uid: '' }
     setMatch([]) // Empty match
-    const result = await filterFetch(filterData, first, last?.uid)
-    setMatch(result) // Fill up match
+
+    filterFetch(filterData, first, last?.uid).then((result) => {
+      setMatch(result)
+      setSearching(false)
+    })
   }
 
   return (
@@ -182,11 +199,20 @@ export default function FindMatch() {
               </select>
             </label>
             <div className='flex justify-start items-center gap-10'>
-              <Button type='submit' primary reg>
-                Search
+              <Button disabled={searching} type='submit' primary reg>
+                {searching ? 'Searching...' : 'Search'}
               </Button>
-              <Button onClick={() => handlePublish()} reg>
-                Publish
+              <Button
+                type='button'
+                disabled={publishing || published}
+                onClick={() => handlePublish()}
+                reg
+              >
+                {publishing
+                  ? 'Publishing...'
+                  : published
+                  ? 'Published'
+                  : 'Publish'}
               </Button>
             </div>
           </form>

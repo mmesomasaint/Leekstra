@@ -15,7 +15,7 @@ export default async function publish(job: Job, hostId: string, title: string) {
 
     if (jobId) {
       const newJobRef = doc(jobsRef, jobId)
-      await setDoc(newJobRef, { type: 'PUBLIC' }, { merge: true })
+      await setDoc(newJobRef, { title, type: 'PUBLIC' }, { merge: true })
     } else throw new Error('Error publishing job...')
   } catch (e) {
     console.log(e)
