@@ -1,4 +1,12 @@
-export async function recent() {
+export async function loadAll() {
+  try {
+
+  } catch(e) {
+    
+  }
+}
+
+export async function loadRecent() {
   try {
 
   } catch(e) {
@@ -6,10 +14,10 @@ export async function recent() {
   }
 }
 
-export async function bestMatch() {
+export async function loadBestMatch() {
   try {
 
   } catch(e) {
-    
+
   }
 }
