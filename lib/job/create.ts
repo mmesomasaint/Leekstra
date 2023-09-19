@@ -10,7 +10,7 @@ export default async function create(job: Job, hostId: string, title?: string) {
   try {
     const data = {
       ...job,
-      title,
+      title: title ?? 'NO-TITLE',
       hostId,
       invitees: [],
       proposals: [],

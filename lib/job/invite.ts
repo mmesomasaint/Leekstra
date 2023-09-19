@@ -20,7 +20,9 @@ export default async function invite(
   job: Job
 ) {
   try {
-    const { jobId } = (await exists(job.hash)) ?? (await create(job, hostId))
+    // If job already exists don't create a new, otherwise create a new job.
+    const existingJobRef = await exists(job.hash)
+    const jobId = existingJobRef.jobId ?? (await create(job, hostId)).jobId
 
     const data = { hostId, plannerId, jobId }
     const inviteDoc = await addDoc(invitesRef, data)
