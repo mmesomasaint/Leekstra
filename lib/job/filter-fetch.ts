@@ -22,7 +22,7 @@ export default async function filterFetch(
 ) {
   const q = query(
     plannersRef,
-    where('budget', '>=', job.budget.from), 
+    where('budget', '>=', job.budget.from),
     where('budget', '<=', job.budget.to),
     where('locationDep', '==', job.locationLocked),
     where('class', '==', job.class),

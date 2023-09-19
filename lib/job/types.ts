@@ -1,7 +1,7 @@
 export type Job = {
   location: string
   locationLocked: boolean
-  budget: {from: number, to: number}
+  budget: { from: number; to: number }
   pay: number
   class: JobFieldClass
   type: JobFieldType
