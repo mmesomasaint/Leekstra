@@ -27,7 +27,7 @@ export default function Jobs() {
             <Card jobDoc={jobDoc} />
           ))}
         </div>
-        <div className='px-10'></div>
+        <div className='px-10'>Profile Mini Card Section</div>
       </div>
     </div>
   )
