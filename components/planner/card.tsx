@@ -44,6 +44,7 @@ export default function Card({
             <span>Location: Nigeria</span>
           </div>
           <Button
+            className='disabled:text-black/30 border-black/30'
             onClick={() => handleInvite()}
             reg
             disabled={loading || btnText === 'Sent'}
