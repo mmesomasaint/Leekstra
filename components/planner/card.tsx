@@ -20,7 +20,9 @@ export default function Card({
     setLoading(true)
     setBtnText('Sending...')
 
-    invite(hid, planner.id, data).then(() => {
+    console.log(`{ plannerId: ${planner.uid}, hostId: ${hid}, data: ${data} }`)
+
+    invite(hid, planner.uid, data).then(() => {
       setLoading(false)
       setBtnText('Sent')
     })
