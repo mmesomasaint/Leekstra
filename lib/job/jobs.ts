@@ -21,13 +21,6 @@ export async function jobsWithoutCursor(first: number) {
     limit(first)
   )
   const querySnap = await getDocs(q)
-  const docs = querySnap.docs.map((doc) => doc.data())
-
-  // Test.
-  querySnap.forEach((doc) => {
-    console.log('A doc: ', doc.data())
-  })
-
   return querySnap
 }
 
@@ -40,11 +33,6 @@ export async function jobsWithCursor(first: number, afterIdx: string) {
     limit(first)
   )
   const querySnap = await getDocs(q)
-
-  // Test.
-  querySnap.forEach((doc) => {
-    console.log('A doc: ', doc.data())
-  })
 
   return querySnap
 }

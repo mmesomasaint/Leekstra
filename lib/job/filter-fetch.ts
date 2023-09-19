@@ -32,10 +32,5 @@ export default async function filterFetch(
   const querySnap = await getDocs(q)
   const docs = querySnap.docs.map((doc) => doc.data())
 
-  // Test.
-  querySnap.forEach((doc) => {
-    console.log('A doc: ', doc.data())
-  })
-
   return docs
 }
