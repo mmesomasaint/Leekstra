@@ -29,6 +29,9 @@ export default async function send(
       const data = plannerDocSnap.data()
       await setDoc(plannerRef, { proposals: [...data.proposals, proposalId] })
     } else throw new Error(`Planner, ${plannerId} isn't logged in`)
+
+    // Test
+    console.log('Proposal sent successfully...')
   } catch (e) {
     console.log(e)
   }
