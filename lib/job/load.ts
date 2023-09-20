@@ -14,11 +14,11 @@ import firebase_app from '../firebase'
 const db = getFirestore(firebase_app)
 const jobsRef = collection(db, 'jobs')
 
-export async function loadAll() {
+export async function all(first: number) {
   let jobDocs, error
 
   try {
-    const q = query(jobsRef, where('type', '==', 'PUBLIC'), limit(2))
+    const q = query(jobsRef, where('type', '==', 'PUBLIC'), limit(first))
     const docSnaps = await getDocs(q)
 
     jobDocs = docSnaps.docs
@@ -29,7 +29,7 @@ export async function loadAll() {
   return { jobDocs, error }
 }
 
-export async function loadRecent() {
+export async function recent(first: number) {
   let jobDocs, error
 
   try {
@@ -37,7 +37,7 @@ export async function loadRecent() {
       jobsRef,
       where('type', '==', 'PUBLIC'),
       orderBy('createdAt', 'asc'),
-      limit(2)
+      limit(first)
     )
     const docSnaps = await getDocs(q)
 
@@ -49,7 +49,7 @@ export async function loadRecent() {
   return { jobDocs, error }
 }
 
-export async function loadBestMatch(plannerId: string, first: number) {
+export async function bestMatch(plannerId: string, first: number) {
   let jobDocs, error
 
   try {
