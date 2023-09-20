@@ -61,8 +61,8 @@ export async function loadBestMatch(plannerId: string, first: number) {
     // Make the query totally dependent on the planners attributes.
     const q = query(
       jobsRef,
-      where('budget', '>=', planner?.budget.from),
-      where('budget', '<=', planner?.budget.to),
+      where('budget.from', '<=', planner?.budget),
+      where('budget.to', '>=', planner?.budget),
       where('locationLocked', '==', planner?.locationDep),
       where('class', '==', planner?.class),
       orderBy('budget', 'asc'),
