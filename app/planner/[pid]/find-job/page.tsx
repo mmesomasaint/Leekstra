@@ -64,9 +64,13 @@ export default function Jobs() {
             </Button>
           </div>
           <div className='grow'>
-            {jobs.map((jobDoc) => (
-              <Card jobDoc={jobDoc} />
-            ))}
+            {loading ? (
+              <div className='flex justify-center items-center h-full'>
+                Loading...
+              </div>
+            ) : (
+              jobs.map((jobDoc) => <Card jobDoc={jobDoc} />)
+            )}
           </div>
         </div>
         <div className='px-10'>Profile Mini Card Section</div>
