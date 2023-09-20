@@ -3,7 +3,7 @@
 import { createContext, useContext, useState, useEffect, useMemo } from 'react'
 import { onAuthStateChanged, getAuth, User as Planner } from 'firebase/auth'
 import firebase_app from '@/lib/firebase'
-import { useParams, useRouter } from 'next/navigation'
+import { useParams, useRouter, usePathname } from 'next/navigation'
 import Loading from '@/components/loading'
 import getPlanner from '@/lib/auth/planner/getPlanner'
 
@@ -26,6 +26,9 @@ export const AuthContextProvider = ({
   const [loading, setLoading] = useState(true)
   const { pid } = useParams()
   const router = useRouter()
+  const pathname = usePathname()
+
+  console.log("We are currently at: ", pathname)
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, async (user) => {
@@ -37,8 +40,11 @@ export const AuthContextProvider = ({
         if (authPlanner) {
           // If authenticated planner owns the url id.
           if (authPlanner.uid === pid) setPlanner(user)
-          // else redirect to a view-only page of planner profile.
-          else router.replace(`/profile/${pid}`)
+          else {
+            // else redirect to a view-only page of planner profile.
+            if (pathname === '/') router.replace(`/profile/${pid}`)
+            else if (pathname.split('/').includes('job')) router.replace('/job/$')
+          }
         } else {
           // If user is not a planner, ask them to login as a planner.
           router.replace('/planner/auth/login')
