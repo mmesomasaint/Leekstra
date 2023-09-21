@@ -75,7 +75,7 @@ export default function FindMatch() {
     e.preventDefault()
 
     setSearching(true)
-    const first = 2
+    const first = 10
     const last = match.pop() ?? { uid: '' }
     setMatch([]) // Empty match
 
