@@ -17,8 +17,8 @@ export default function LinkGrid() {
           <LinkText href={`/planner/${planner?.uid}/proposals`}>
             Proposals
           </LinkText>
-          <LinkText href={`/planner/${planner?.uid}/messages`}>
-            Messages
+          <LinkText href={`/planner/${planner?.uid}/contacts`}>
+            Contacts
           </LinkText>
           <LinkText href={`/planner/${planner?.uid}/invites`}>Invites</LinkText>
         </div>

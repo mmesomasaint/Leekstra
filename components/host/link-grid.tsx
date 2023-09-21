@@ -14,7 +14,7 @@ export default function LinkGrid() {
         <div className='flex justify-evenly items-center gap-5'>
           <LinkText href={`/host/${host?.uid}/`}>Profile</LinkText>
           <LinkText href={`/host/${host?.uid}/find-match`}>Find Match</LinkText>
-          <LinkText href={`/host/${host?.uid}/messages`}>Messages</LinkText>
+          <LinkText href={`/host/${host?.uid}/contacts`}>Contacts</LinkText>
           <LinkText href={`/host/${host?.uid}/my-jobs`}>My Jobs</LinkText>
         </div>
       </div>
