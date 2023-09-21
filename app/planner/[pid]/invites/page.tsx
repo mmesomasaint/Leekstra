@@ -53,9 +53,15 @@ export default function Invites() {
             </div>
           ))}
         </div>
-        <div className='col-span-2 flex flex-col justify-start items-stretch gap-4 px-10'>
-          <span>Job: {selectedInvite.jobId}</span>
-          <span>From: {selectedInvite.hostId}</span>
+        <div className='col-span-2 px-10'>
+          {loading ? (
+            <div className='flex justify-center items-center'>Loading...</div>
+          ) : (
+            <div className='flex flex-col justify-start items-stretch gap-4'>
+              <span>Job: {selectedInvite.jobId}</span>
+              <span>From: {selectedInvite.hostId}</span>
+            </div>
+          )}
         </div>
       </div>
     </div>
