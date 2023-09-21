@@ -13,7 +13,7 @@ export async function shareToHost(fromId: string, hostId: string) {
   const data = hostDoc.data()
 
   await setDoc(hostRef, { contacts: [...data?.contacts, contactId] })
-  console.log("Contact shared successfully...")
+  console.log('Contact shared successfully...')
 }
 
 export async function shareToPlanner(fromId: string, plannerId: string) {
@@ -23,7 +23,7 @@ export async function shareToPlanner(fromId: string, plannerId: string) {
   const plannerRef = doc(db, 'planners', plannerId)
   const plannerDoc = await getDoc(plannerRef)
   const data = plannerDoc.data()
-  
+
   await setDoc(plannerRef, { contacts: [...data?.contacts, contactId] })
-  console.log("Contact shared successfully...")
+  console.log('Contact shared successfully...')
 }
