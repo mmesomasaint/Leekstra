@@ -7,6 +7,8 @@ import { DocumentData } from 'firebase/firestore'
 import getByPlanner from '@/lib/job/invite/getByPlanner'
 import getById from '@/lib/job/invite/getById'
 import CenterText from '@/components/center-text'
+import Button from '@/components/button'
+import Accept from '@/components/planner/accept'
 
 export default function Invites() {
   const { planner } = useAuthContext()
@@ -67,6 +69,7 @@ export default function Invites() {
             <div className='flex flex-col justify-start items-stretch gap-4'>
               <span>Job: {selectedInvite.jobId}</span>
               <span>From: {selectedInvite.hostId}</span>
+              <Accept from={planner?.uid ?? ''} to={selectedInvite.hostId} />
             </div>
           )}
         </div>
