@@ -5,6 +5,7 @@ import Card from '@/components/job/card'
 import { useAuthContext } from '../../auth/auth-context'
 import { all, bestMatch, recent } from '@/lib/job/load'
 import Button from '@/components/button'
+import CenterText from '@/components/center-text'
 
 export default function Jobs() {
   const { planner } = useAuthContext()
@@ -65,9 +66,7 @@ export default function Jobs() {
           </div>
           <div className='grow'>
             {loading ? (
-              <div className='flex justify-center items-center h-full'>
-                Loading...
-              </div>
+              <CenterText>Loading...</CenterText>
             ) : (
               jobs.map((jobDoc) => <Card jobDoc={jobDoc} />)
             )}

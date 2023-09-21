@@ -6,6 +6,7 @@ import { useAuthContext } from '../../auth/auth-context'
 import { DocumentData } from 'firebase/firestore'
 import getByPlanner from '@/lib/job/invite/getByPlanner'
 import getById from '@/lib/job/invite/getById'
+import CenterText from '@/components/center-text'
 
 export default function Invites() {
   const { planner } = useAuthContext()
@@ -45,19 +46,23 @@ export default function Invites() {
       <Header size='xl'>Invites</Header>
       <div className='grid grid-cols-3 gap-10'>
         <div className='flex flex-col justify-start items-start gap-7 px-10'>
-          {invites.map((invite) => (
-            <div
-              key={invite.id}
-              className='border-y border-y-black/75 shadow-md py-5 flex justify-around items-center'
-              onClick={() => setSelectedInviteId(invite.id)}
-            >
-              {invite.hostId} &rarr; {invite.jobId}
-            </div>
-          ))}
+          {invites.length === 0 ? (
+            <CenterText>No records found.</CenterText>
+          ) : (
+            invites.map((invite) => (
+              <div
+                key={invite.id}
+                className='border-y border-y-black/75 shadow-md py-5 flex justify-around items-center'
+                onClick={() => setSelectedInviteId(invite.id)}
+              >
+                {invite.hostId} &rarr; {invite.jobId}
+              </div>
+            ))
+          )}
         </div>
         <div className='col-span-2 px-10'>
           {loading ? (
-            <div className='flex justify-center items-center'>Loading...</div>
+            <CenterText>Loading...</CenterText>
           ) : (
             <div className='flex flex-col justify-start items-stretch gap-4'>
               <span>Job: {selectedInvite.jobId}</span>

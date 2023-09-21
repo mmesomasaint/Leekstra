@@ -4,6 +4,7 @@ import Header from '@/components/header'
 import { useAuthContext } from '../../auth/auth-context'
 import getByHost from '@/lib/job/getByHost'
 import getById from '@/lib/job/getById'
+import CenterText from '@/components/center-text'
 
 export default function MyJobs() {
   const { host } = useAuthContext()
@@ -26,10 +27,10 @@ export default function MyJobs() {
     fetchMyJobs()
   }, [])
 
-  useEffect (() => {
+  useEffect(() => {
     const getSelectedJob = () => {
       setLoading(true)
-      
+
       getById(selectedJobId).then(({ job }) => {
         if (job) setSelectedJob(job)
         setLoading(false)
@@ -59,9 +60,7 @@ export default function MyJobs() {
         </div>
         <div className='col-span-2 px-10'>
           {loading ? (
-            <div className='grow flex justify-center items-center'>
-              Loading...
-            </div>
+            <CenterText>Loading...</CenterText>
           ) : (
             <div className=''>
               {selectedJob.title} ~ {selectedJob.id}

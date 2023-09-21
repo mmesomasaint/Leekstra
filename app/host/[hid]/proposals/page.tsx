@@ -6,6 +6,7 @@ import { useAuthContext } from '../../auth/auth-context'
 import { DocumentData } from 'firebase/firestore'
 import getByHost from '@/lib/job/proposal/getByHost'
 import getById from '@/lib/job/proposal/getById'
+import CenterText from '@/components/center-text'
 
 export default function Proposals() {
   const { host } = useAuthContext()
@@ -57,7 +58,7 @@ export default function Proposals() {
         </div>
         <div className='col-span-2 px-10'>
           {loading ? (
-            <div className='flex justify-center items-center'>Loading...</div>
+            <CenterText>Loading...</CenterText>
           ) : (
             <div className='flex flex-col justify-start items-stretch gap-4'>
               <span>For: {selectedProposal.jobId}</span>
