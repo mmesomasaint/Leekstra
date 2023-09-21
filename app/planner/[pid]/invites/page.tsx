@@ -36,6 +36,8 @@ export default function Invites() {
         setLoading(false)
       })
     }
+
+    getSelectedInvite()
   }, [selectedInviteId])
 
   return (
