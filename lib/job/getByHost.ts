@@ -12,7 +12,7 @@ import firebase_app from '../firebase'
 const db = getFirestore(firebase_app)
 const jobsRef = collection(db, 'jobs')
 
-export default async function jobs(hostId: string) {
+export default async function getByHost(hostId: string) {
   let jobDocs, error
 
   try {
