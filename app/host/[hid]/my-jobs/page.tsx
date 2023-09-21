@@ -13,14 +13,6 @@ export default function MyJobs() {
   const [selectedJobId, setSelectedJobId] = useState<string>('')
   const [loading, setLoading] = useState<boolean>(false)
 
-  const getSelectedJob = () => {
-    setLoading(true)
-    getById(selectedJobId).then(({ job }) => {
-      if (job) setSelectedJob(job)
-      setLoading(false)
-    })
-  }
-
   useEffect(() => {
     const fetchMyJobs = async () => {
       if (host) {
@@ -33,6 +25,19 @@ export default function MyJobs() {
 
     fetchMyJobs()
   }, [])
+
+  useEffect (() => {
+    const getSelectedJob = () => {
+      setLoading(true)
+      
+      getById(selectedJobId).then(({ job }) => {
+        if (job) setSelectedJob(job)
+        setLoading(false)
+      })
+    }
+
+    getSelectedJob()
+  }, [selectedJobId])
 
   return (
     <div className='px-10'>
