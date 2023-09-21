@@ -2,14 +2,22 @@
 
 import Button from '@/components/button'
 import { useState, FormEvent } from 'react'
+import { useRouter, useParams } from 'next/navigation'
+import send from '@/lib/job/proposal/send'
+import { useAuthContext } from '@/app/planner/auth/auth-context'
 
 export default function SendProposal() {
+  const {planner} = useAuthContext()
   const [proposal, setProposal] = useState<string>('')
+  const {jid} = useParams()
+  const router = useRouter()
 
   const sendProposal = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault()
 
     // Create the proposal in db and send to host's job.
+    await send(`${jid}`, planner?.uid ?? '', proposal)
+    router.replace(`${planner?.uid}/find-job`)
   }
 
   return (
