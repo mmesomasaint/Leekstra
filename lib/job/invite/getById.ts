@@ -1,11 +1,11 @@
-import firebase_app from "@/lib/firebase";
-import { collection, doc, getDoc, getFirestore } from "firebase/firestore";
+import firebase_app from '@/lib/firebase'
+import { collection, doc, getDoc, getFirestore } from 'firebase/firestore'
 
 const db = getFirestore(firebase_app)
 const invitesRef = collection(db, 'invites')
 
 export default async function getById(inviteId: string) {
-  let invite, error 
+  let invite, error
 
   try {
     const inviteRef = doc(invitesRef, inviteId)
@@ -16,5 +16,5 @@ export default async function getById(inviteId: string) {
     error = e
   }
 
-  return {invite, error}
+  return { invite, error }
 }
