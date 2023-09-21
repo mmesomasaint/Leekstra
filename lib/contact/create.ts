@@ -10,6 +10,7 @@ export default async function create(forId: string) {
   let contactId, error
 
   try {
+    // Id must belong to a host or a planner
     const userDoc = (await getHost(forId)) ?? (await getPlanner(forId))
 
     if (userDoc) {
