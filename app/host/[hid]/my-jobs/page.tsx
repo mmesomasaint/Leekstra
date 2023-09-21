@@ -1,3 +1,5 @@
+'use client'
+
 import { useState, useEffect } from 'react'
 import { DocumentData } from 'firebase/firestore'
 import Header from '@/components/header'

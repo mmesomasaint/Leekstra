@@ -1,3 +1,5 @@
+'use client'
+
 import { useState } from 'react'
 import Header from '@/components/header'
 import { DocumentData } from 'firebase/firestore'
