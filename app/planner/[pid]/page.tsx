@@ -22,7 +22,7 @@ export default function Profile() {
                 alt='avatar'
               />
               <span className='text-lg font-semibold text-black/75'>
-                Name: Emeka D Stalleon
+                Name: {planner?.displayName}
               </span>
               <span className='text-lg font-semibold text-black/75'>
                 Location: Enugu, Nigeria
