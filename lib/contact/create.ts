@@ -23,7 +23,7 @@ export default async function create(forId: string) {
 
       const contactRef = await addDoc(contactsRef, data)
       contactId = contactRef.id
-    }
+    } else throw new Error(`User, ${forId} doesn't exist.`)
   } catch (e) {
     error = e
   }
