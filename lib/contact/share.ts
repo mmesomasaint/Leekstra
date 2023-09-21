@@ -19,7 +19,9 @@ export async function shareToHost(fromId: string, hostId: string) {
   const plannerDoc = await getDoc(plannerRef)
   const plannerData = plannerDoc.data()
 
-  await setDoc(plannerRef, {accessToContact: [...plannerData?.accessToContact, hostId]})
+  await setDoc(plannerRef, {
+    accessToContact: [...plannerData?.accessToContact, hostId],
+  })
 
   // Test.
   console.log('Contact shared successfully...')
@@ -40,7 +42,9 @@ export async function shareToPlanner(fromId: string, plannerId: string) {
   const hostDoc = await getDoc(hostRef)
   const hostData = hostDoc.data()
 
-  await setDoc(hostRef, {accessToContact: [...hostData?.accessToContact, plannerId]})
+  await setDoc(hostRef, {
+    accessToContact: [...hostData?.accessToContact, plannerId],
+  })
 
   // Test.
   console.log('Contact shared successfully...')
