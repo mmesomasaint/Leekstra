@@ -12,7 +12,7 @@ import {
 const db = getFirestore(firebase_app)
 const invitesRef = collection(db, 'invites')
 
-export default async function getByHost(plannerId: string) {
+export default async function getByPlanner(plannerId: string) {
   let inviteDocs, error
 
   try {
