@@ -70,7 +70,7 @@ export default function Jobs() {
             {loading ? (
               <CenterText>Loading...</CenterText>
             ) : (
-              jobs.map((jobDoc) => <Card jobDoc={jobDoc} />)
+              jobs.map((jobDoc) => <Card key={jobDoc.id} jobDoc={jobDoc} />)
             )}
           </div>
         </div>
