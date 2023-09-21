@@ -7,9 +7,9 @@ import send from '@/lib/job/proposal/send'
 import { useAuthContext } from '@/app/planner/auth/auth-context'
 
 export default function SendProposal() {
-  const {planner} = useAuthContext()
+  const { planner } = useAuthContext()
   const [proposal, setProposal] = useState<string>('')
-  const {jid} = useParams()
+  const { jid } = useParams()
   const router = useRouter()
 
   const sendProposal = async (e: FormEvent<HTMLFormElement>) => {
