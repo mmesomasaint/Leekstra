@@ -8,9 +8,11 @@ import { useAuthContext } from '../../auth/auth-context'
 import { all, bestMatch, recent } from '@/lib/job/load'
 import Button from '@/components/button'
 import CenterText from '@/components/center-text'
+import { useRouter } from 'next/navigation'
 
 export default function Jobs() {
   const { planner } = useAuthContext()
+  const router = useRouter()
   const [jobs, setJobs] = useState<DocumentData[]>([])
   const [loading, setLoading] = useState<boolean>(false)
 
@@ -70,7 +72,7 @@ export default function Jobs() {
             {loading ? (
               <CenterText>Loading...</CenterText>
             ) : (
-              jobs.map((jobDoc) => <Card key={jobDoc.id} jobDoc={jobDoc} />)
+              jobs.map((jobDoc) => <Card key={jobDoc.id} jobDoc={jobDoc} onClick={() => router.push(`find-job/job/${jobDoc.id}`)} />)
             )}
           </div>
         </div>
