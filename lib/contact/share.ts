@@ -1,25 +1,29 @@
-import { doc, getFirestore, setDoc } from 'firebase/firestore'
+import { doc, getDoc, getFirestore, setDoc } from 'firebase/firestore'
 import firebase_app from '../firebase'
 import create from './create'
-import getHost from '../auth/host/getHost'
-import getPlanner from '../auth/planner/getPlanner'
 
 const db = getFirestore(firebase_app)
 
-export default async function share(fromId: string, toId: string) {
+export async function shareToHost(fromId: string, hostId: string) {
   const { contactId } = await create(fromId)
 
-  // Add to recipients contacts
-  const hostData = await getHost(toId)
-  const plannerData = await getPlanner(toId)
+  // Add to hosts contacts
+  const hostRef = doc(db, 'hosts', hostId)
+  const hostDoc = await getDoc(hostRef)
+  const data = hostDoc.data()
 
-  if (hostData) {
-    const hostRef = doc(db, 'hosts', toId)
-    await setDoc(hostRef, { contacts: [...hostData?.contacts, contactId] })
-  } else if (plannerData) {
-    const plannerRef = doc(db, 'planners', toId)
-    await setDoc(plannerRef, {
-      contacts: [...plannerData?.contacts, contactId],
-    })
-  } else throw new Error(`Recipient, ${toId} is not a registered user`)
+  await setDoc(hostRef, { contacts: [...data?.contacts, contactId] })
+  console.log("Contact shared successfully...")
+}
+
+export async function shareToPlanner(fromId: string, plannerId: string) {
+  const { contactId } = await create(fromId)
+
+  // Add to hosts contacts
+  const plannerRef = doc(db, 'planners', plannerId)
+  const plannerDoc = await getDoc(plannerRef)
+  const data = plannerDoc.data()
+  
+  await setDoc(plannerRef, { contacts: [...data?.contacts, contactId] })
+  console.log("Contact shared successfully...")
 }
