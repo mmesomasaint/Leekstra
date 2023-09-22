@@ -10,7 +10,7 @@ export default async function send(
   proposal: string
 ) {
   try {
-    const { proposalId } = await create(plannerId, proposal)
+    const { proposalId } = await create(jobId, plannerId, proposal)
 
     // Add the proposal to the jobs proposals property.
     const jobRef = doc(db, 'jobs', jobId)
