@@ -25,7 +25,7 @@ export default function SendProposal() {
       onSubmit={sendProposal}
       className='flex flex-col gap-7 justify-start items-start w-full px-10'
     >
-      <label htmlFor='proposal'>
+      <label htmlFor='proposal' className='w-full flex flex-col gap-3'>
         <p>Proposal:</p>
         <textarea
           required
