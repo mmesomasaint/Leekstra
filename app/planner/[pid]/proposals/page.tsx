@@ -4,7 +4,8 @@ import { useState, useEffect } from 'react'
 import Header from '@/components/header'
 import { useAuthContext } from '../../auth/auth-context'
 import { DocumentData } from 'firebase/firestore'
-import {getById, getByPlanner} from '@/lib/job/proposal/get'
+import getById from '@/lib/job/getById'
+import {getById as getProposalById, getByPlanner} from '@/lib/job/proposal/get'
 import CenterText from '@/components/center-text'
 import Accept from '@/components/planner/accept'
 
@@ -33,8 +34,12 @@ export default function Proposals() {
     const getSelectedProposal = () => {
       setLoading(true)
 
-      getById(selectedProposalId).then(async ({ proposal }) => {
-        if (proposal) setSelectedProposal(proposal)
+      getProposalById(selectedProposalId).then(async ({ proposal }) => {
+        if (proposal) {
+          const job = await getById(proposal.jobId)
+          setSelectedProposal(proposal)
+          setProposalJob(job)
+        }
         setLoading(false)
       })
     }
@@ -53,7 +58,7 @@ export default function Proposals() {
               className='border-y border-y-black/75 shadow-md py-5 flex justify-around items-center'
               onClick={() => setSelectedProposalId(proposal.id)}
             >
-              {proposal.plannerId} &rarr; {proposal.jobId}
+              {proposalJob?.title} &rarr; {proposalJob?.hostId}
             </div>
           ))}
         </div>
