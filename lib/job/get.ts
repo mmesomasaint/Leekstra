@@ -1,5 +1,7 @@
 import {
   collection,
+  doc,
+  getDoc,
   getDocs,
   getFirestore,
   limit,
@@ -12,7 +14,7 @@ import firebase_app from '../firebase'
 const db = getFirestore(firebase_app)
 const jobsRef = collection(db, 'jobs')
 
-export default async function getByHost(hostId: string) {
+export async function getByHost(hostId: string) {
   let jobDocs, error
 
   try {
@@ -30,4 +32,19 @@ export default async function getByHost(hostId: string) {
   }
 
   return { jobDocs, error }
+}
+
+export async function getById(jobId: string) {
+  let job, error 
+
+  try {
+    const jobRef = doc(jobsRef, jobId) 
+    const jobDoc = await getDoc(jobRef)
+
+    job = jobDoc.data()
+  } catch (e) {
+    error = e
+  }
+
+  return {job, error}
 }

@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react'
 import Header from '@/components/header'
 import { useAuthContext } from '../../auth/auth-context'
 import { DocumentData } from 'firebase/firestore'
-import getById from '@/lib/job/getById'
+import {getById as getJobById} from '@/lib/job/get'
 import {getById as getProposalById, getByPlanner} from '@/lib/job/proposal/get'
 import CenterText from '@/components/center-text'
 import Accept from '@/components/planner/accept'
@@ -36,7 +36,7 @@ export default function Proposals() {
 
       getProposalById(selectedProposalId).then(async ({ proposal }) => {
         if (proposal) {
-          const job = await getById(proposal.jobId)
+          const job = await getJobById(proposal.jobId)
           setSelectedProposal(proposal)
           setProposalJob(job)
         }

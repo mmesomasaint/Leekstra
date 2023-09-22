@@ -4,8 +4,7 @@ import { useState, useEffect } from 'react'
 import { DocumentData } from 'firebase/firestore'
 import Header from '@/components/header'
 import { useAuthContext } from '../../auth/auth-context'
-import getByHost from '@/lib/job/getByHost'
-import getById from '@/lib/job/getById'
+import {getById, getByHost} from '@/lib/job/get'
 import CenterText from '@/components/center-text'
 
 export default function MyJobs() {
