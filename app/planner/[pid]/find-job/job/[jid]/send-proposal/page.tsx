@@ -23,7 +23,7 @@ export default function SendProposal() {
   return (
     <form
       onSubmit={sendProposal}
-      className='flex flex-col gap-7 justify-start items-start'
+      className='flex flex-col gap-7 justify-start items-start w-full px-10'
     >
       <label htmlFor='proposal'>
         <p>Proposal:</p>
@@ -33,7 +33,7 @@ export default function SendProposal() {
           name='proposal'
           id='proposal'
           value={proposal}
-          rows={30}
+          rows={20}
           placeholder='Write your proposal...'
           className='w-full border border-zinc-600/50 rounded-xl p-3 focus:outline-blue-500/50'
         />
