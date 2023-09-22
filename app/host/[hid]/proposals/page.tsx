@@ -64,7 +64,7 @@ export default function Proposals() {
             <div className='flex flex-col justify-start items-stretch gap-4'>
               <span>For: {selectedProposal.jobId}</span>
               <span>From: {selectedProposal.plannerId}</span>
-              <Accept from={host?.uid ?? ''} to={selectedProposal.plannerId} />
+              <Accept from={`${host?.uid}`} to={selectedProposal.plannerId} />
             </div>
           )}
         </div>
