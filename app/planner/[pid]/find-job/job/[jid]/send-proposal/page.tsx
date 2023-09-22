@@ -17,7 +17,7 @@ export default function SendProposal() {
 
     // Create the proposal in db and send to host's job.
     await send(`${jid}`, `${planner?.uid}`, proposal)
-    router.replace(`${planner?.uid}/find-job`)
+    router.replace(`/planner/${planner?.uid}/find-job`)
   }
 
   return (
