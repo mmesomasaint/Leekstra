@@ -18,9 +18,12 @@ export async function getByHost(hostId: string) {
   let proposalDocs, error
 
   try {
+    const hostDoc = await getDoc(doc(db, 'hosts', hostId))
+    const host = hostDoc.data()
+
     const q = query(
       proposalsRef,
-      where('hostId', '==', hostId),
+      where('jobId', 'in', host?.jobs),
       orderBy('createdAt', 'asc'),
       limit(5)
     )
