@@ -7,7 +7,6 @@ import { DocumentData } from 'firebase/firestore'
 import getByPlanner from '@/lib/job/invite/getByPlanner'
 import getById from '@/lib/job/invite/getById'
 import CenterText from '@/components/center-text'
-import Button from '@/components/button'
 import Accept from '@/components/planner/accept'
 
 export default function Invites() {
