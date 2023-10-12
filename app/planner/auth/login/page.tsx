@@ -58,9 +58,9 @@ function Page() {
             />
           </label>
           <div className='flex justify-start items-center gap-4'>
-          <Button type='submit' reg primary>
-            Log in
-          </Button>
+            <Button type='submit' reg primary>
+              Log in
+            </Button>
             <Link href='/planner/auth/register'>
               <p className='hover:underline hover:underline-offset-4 text-black/70 hover:text-black'>
                 I don't have an account?
