@@ -4,6 +4,7 @@ import { useState, FormEvent } from 'react'
 import { useRouter } from 'next/navigation'
 import Button from '@/components/button'
 import logIn from '@/lib/auth/planner/login'
+import Link from 'next/link'
 
 function Page() {
   const [email, setEmail] = useState('')
@@ -56,9 +57,16 @@ function Page() {
               className='border border-zinc-600/50 rounded-xl p-3 focus:outline-blue-500/50'
             />
           </label>
+          <div className='flex justify-start items-center gap-4'>
           <Button type='submit' reg primary>
             Log in
           </Button>
+            <Link href='/planner/auth/register'>
+              <p className='hover:underline hover:underline-offset-4 text-black/70 hover:text-black'>
+                I don't have an account?
+              </p>
+            </Link>
+          </div>
         </form>
       </div>
       <div className='grow h-full scale-125 rotate-45 origin-top-left overflow-hidden'>
