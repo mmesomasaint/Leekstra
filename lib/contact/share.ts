@@ -12,15 +12,15 @@ export async function shareToHost(fromId: string, hostId: string) {
   const hostDoc = await getDoc(hostRef)
   const hostData = hostDoc.data()
 
-  await setDoc(hostRef, { contacts: [...hostData?.contacts, contactId] })
+  hostData && await setDoc(hostRef, { contacts: [...hostData.contacts, contactId] })
 
   // Add the hosts Id to list of hosts who has access.
   const plannerRef = doc(db, 'planners', fromId)
   const plannerDoc = await getDoc(plannerRef)
   const plannerData = plannerDoc.data()
 
-  await setDoc(plannerRef, {
-    accessToContact: [...plannerData?.accessToContact, hostId],
+  plannerData && await setDoc(plannerRef, {
+    accessToContact: [...plannerData.accessToContact, hostId],
   })
 
   // Test.
@@ -35,15 +35,15 @@ export async function shareToPlanner(fromId: string, plannerId: string) {
   const plannerDoc = await getDoc(plannerRef)
   const data = plannerDoc.data()
 
-  await setDoc(plannerRef, { contacts: [...data?.contacts, contactId] })
+  data && await setDoc(plannerRef, { contacts: [...data.contacts, contactId] })
 
   // Add the planner's Id to list of planners who has access.
   const hostRef = doc(db, 'hosts', fromId)
   const hostDoc = await getDoc(hostRef)
   const hostData = hostDoc.data()
 
-  await setDoc(hostRef, {
-    accessToContact: [...hostData?.accessToContact, plannerId],
+  hostData && await setDoc(hostRef, {
+    accessToContact: [...hostData.accessToContact, plannerId],
   })
 
   // Test.
