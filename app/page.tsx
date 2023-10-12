@@ -21,7 +21,11 @@ export default function Home() {
           <Button onClick={() => router.push('/host/auth/login')} reg>
             Log In
           </Button>
-          <Button onClick={() => router.push('/host/auth/register')} reg primary>
+          <Button
+            onClick={() => router.push('/host/auth/register')}
+            reg
+            primary
+          >
             Register
           </Button>
         </div>
